@@ -34,6 +34,7 @@
   // ---------- mesaj formu ----------
   const form = document.querySelector('[data-form]');
   if (!form) return;
+
   const status = form.querySelector('[data-form-status]');
   const send = form.querySelector('[type="submit"]');
   const label = send.textContent;

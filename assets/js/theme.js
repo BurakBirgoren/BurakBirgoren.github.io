@@ -9,7 +9,7 @@
   const isLight = () => root.getAttribute('data-theme') === 'light';
   const sync = () => {
     btn.setAttribute('aria-pressed', String(isLight()));
-    if (meta) meta.content = isLight() ? '#f3f4f6' : '#050506';
+    if (meta) meta.content = isLight() ? '#f0f1f5' : '#050508';
   };
   sync();
   btn.addEventListener('click', () => {

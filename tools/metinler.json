@@ -11,6 +11,7 @@
     "title": "BRGRN — Building Resilient Generative Response Networks",
     "description": "BRGRN: bir parçası düşse de yanıt vermeyi sürdüren üretken yapay zekâ sistemleri kuruyoruz.",
     "skip": "İçeriğe geç", "home_label": "BRGRN ana sayfa", "nav_label": "Bölümler", "lang_label": "Dil", "theme_label": "Açık ya da koyu temaya geç",
+    "more": "Bizi daha yakından tanıyın",
     "nav_principles": "İlkeler", "nav_fields": "Birikim", "nav_contact": "İletişim",
     "lede": "Bir parçası düşse de yanıt vermeyi sürdüren üretken yapay zekâ sistemleri kuruyoruz.",
 
@@ -60,9 +61,9 @@
     "flow_out": ["Döküm", "Özet", "Yanıt", "Karar", "Görsel"],
 
     "contact_title": "İletişim",
-    "contact_lead": "Projenizi anlatın; ne yapılabileceğini birlikte konuşalım.",
+    "contact_lead": "Nasıl bir sistem istediğinizi yazın; nasıl kuracağımızı size anlatalım.",
     "copy": "Adresi kopyala", "copied": "Kopyalandı", "copy_failed": "Kopyalanamadı",
-    "form_name": "Ad soyad", "form_email": "E-posta", "form_subject": "Konu", "form_message": "Mesaj",
+    "form_name": "Ad soyad", "form_email": "E-posta", "form_subject": "Konu", "form_message": "Mesaj", "form_message_placeholder": "Nasıl bir sistem istiyorsunuz?",
     "form_send": "Mesajı gönder",
     "form_note": "Bu bilgileri yalnızca size yanıt vermek için kullanırız.",
     "form_msg": {
@@ -78,6 +79,7 @@
     "title": "BRGRN — Building Resilient Generative Response Networks",
     "description": "BRGRN builds generative AI systems that keep answering even when a part fails.",
     "skip": "Skip to content", "home_label": "BRGRN home", "nav_label": "Sections", "lang_label": "Language", "theme_label": "Switch between light and dark theme",
+    "more": "Get to know us",
     "nav_principles": "Principles", "nav_fields": "Expertise", "nav_contact": "Contact",
     "lede": "We build generative AI systems that keep answering even when a part fails.",
 
@@ -127,9 +129,9 @@
     "flow_out": ["Transcript", "Summary", "Answer", "Decision", "Image"],
 
     "contact_title": "Contact",
-    "contact_lead": "Tell us about your project and we will work out what can be done.",
+    "contact_lead": "Tell us what system you need and we will explain how we would build it.",
     "copy": "Copy address", "copied": "Copied", "copy_failed": "Could not copy",
-    "form_name": "Full name", "form_email": "Email", "form_subject": "Subject", "form_message": "Message",
+    "form_name": "Full name", "form_email": "Email", "form_subject": "Subject", "form_message": "Message", "form_message_placeholder": "What system do you need?",
     "form_send": "Send message",
     "form_note": "We use this information only to reply to you.",
     "form_msg": {
@@ -145,6 +147,7 @@
     "title": "BRGRN — Building Resilient Generative Response Networks",
     "description": "BRGRN baut generative KI-Systeme, die auch dann antworten, wenn ein Teil ausfällt.",
     "skip": "Zum Inhalt springen", "home_label": "BRGRN Startseite", "nav_label": "Abschnitte", "lang_label": "Sprache", "theme_label": "Zwischen hellem und dunklem Design wechseln",
+    "more": "Lernen Sie uns kennen",
     "nav_principles": "Prinzipien", "nav_fields": "Kompetenzen", "nav_contact": "Kontakt",
     "lede": "Wir bauen generative KI-Systeme, die auch dann antworten, wenn ein Teil ausfällt.",
 
@@ -194,9 +197,9 @@
     "flow_out": ["Transkript", "Zusammenfassung", "Antwort", "Entscheidung", "Bild"],
 
     "contact_title": "Kontakt",
-    "contact_lead": "Beschreiben Sie Ihr Projekt; wir klären gemeinsam, was möglich ist.",
+    "contact_lead": "Beschreiben Sie, welches System Sie brauchen; wir erklären, wie wir es bauen würden.",
     "copy": "Adresse kopieren", "copied": "Kopiert", "copy_failed": "Kopieren fehlgeschlagen",
-    "form_name": "Vor- und Nachname", "form_email": "E-Mail", "form_subject": "Betreff", "form_message": "Nachricht",
+    "form_name": "Vor- und Nachname", "form_email": "E-Mail", "form_subject": "Betreff", "form_message": "Nachricht", "form_message_placeholder": "Welches System brauchen Sie?",
     "form_send": "Nachricht senden",
     "form_note": "Wir verwenden diese Angaben nur, um Ihnen zu antworten.",
     "form_msg": {
@@ -212,6 +215,7 @@
     "title": "BRGRN — Building Resilient Generative Response Networks",
     "description": "BRGRN 构建生成式人工智能系统：即使某个部分失效，系统仍能持续响应。",
     "skip": "跳到正文", "home_label": "BRGRN 首页", "nav_label": "页面导航", "lang_label": "语言", "theme_label": "切换浅色或深色主题",
+    "more": "进一步了解我们",
     "nav_principles": "原则", "nav_fields": "技术能力", "nav_contact": "联系我们",
     "lede": "我们构建生成式人工智能系统：即使某个部分失效，系统仍能持续响应。",
 
@@ -261,9 +265,9 @@
     "flow_out": ["转写", "摘要", "回答", "决策", "图像"],
 
     "contact_title": "联系我们",
-    "contact_lead": "请告诉我们您的项目，我们一起探讨可行的方案。",
+    "contact_lead": "告诉我们您需要什么样的系统，我们会说明如何为您构建。",
     "copy": "复制地址", "copied": "已复制", "copy_failed": "复制失败",
-    "form_name": "姓名", "form_email": "电子邮箱", "form_subject": "主题", "form_message": "留言",
+    "form_name": "姓名", "form_email": "电子邮箱", "form_subject": "主题", "form_message": "留言", "form_message_placeholder": "您需要什么样的系统？",
     "form_send": "发送留言",
     "form_note": "这些信息仅用于回复您。",
     "form_msg": {

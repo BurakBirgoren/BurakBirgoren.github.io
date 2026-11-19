@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>BRGRN — Building Resilient Generative Response Networks</title>
 <meta name="description" content="BRGRN 构建生成式人工智能系统：即使某个部分失效，系统仍能持续响应。">
-<meta name="theme-color" content="#050506">
+<meta name="theme-color" content="#050508">
 <meta name="color-scheme" content="dark light">
 <link rel="canonical" href="https://brgrn.com.tr/zh/">
 <link rel="alternate" hreflang="tr" href="https://brgrn.com.tr/">
@@ -31,7 +31,7 @@
 <link rel="apple-touch-icon" href="../assets/img/apple-touch-icon.png">
 <link rel="preload" href="../assets/fonts/ibm-plex-sans-latin-400.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="../assets/fonts/michroma-latin-400.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="../assets/css/site.css?v=9">
+<link rel="stylesheet" href="../assets/css/site.css?v=16">
 <script>(function () { var d = document.documentElement; d.className = 'js'; try { if (localStorage.getItem('brgrn-tema') === 'light') d.setAttribute('data-theme', 'light'); } catch (e) {} })();</script>
 </head>
 <body>
@@ -54,9 +54,12 @@
   </defs>
 </svg>
 
+<canvas class="scene" data-scene aria-hidden="true"></canvas>
+
 <a class="skip" href="#icerik">跳到正文</a>
 
 <header class="top">
+<div class="top__in">
   <a class="top__home" href="../" aria-label="BRGRN 首页">
     <svg class="top__mark" viewBox="0 0 189.25 227.6" aria-hidden="true"><use href="#brgrn-mark"/></svg>
   </a>
@@ -74,49 +77,35 @@
   <button type="button" class="top__theme" data-theme-toggle aria-pressed="false" aria-label="切换浅色或深色主题" title="切换浅色或深色主题">
     <svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="7.25"/><path d="M10 2.75a7.25 7.25 0 0 1 0 14.5z"/></svg>
   </button>
+</div>
 </header>
 
 <main id="icerik">
 
   <section class="hero" aria-labelledby="baslik">
     <div class="hero__id">
-      <svg class="hero__mark rise" style="--d:0" viewBox="0 0 189.25 227.6" aria-hidden="true"><use href="#brgrn-mark"/></svg>
-      <h1 class="hero__word rise" style="--d:1" id="baslik">
+      <h1 class="hero__word rise" style="--d:0" id="baslik">
         <svg viewBox="0 0 710.1 73.2" role="img" aria-label="BRGRN"><use href="#brgrn-word"/></svg>
       </h1>
-      <p class="tagline rise" style="--d:2" lang="en"><span>Building Resilient Generative Response Networks</span></p>
-      <p class="lede rise" style="--d:3">我们构建生成式人工智能系统：即使某个部分失效，系统仍能持续响应。</p>
+      <p class="tagline rise" style="--d:1" lang="en"><span>Building Resilient Generative Response Networks</span></p>
+      <p class="lede rise" style="--d:2">我们构建生成式人工智能系统：即使某个部分失效，系统仍能持续响应。</p>
+      <a class="more rise" style="--d:3" href="#ilkeler">
+        <span class="more__track" aria-hidden="true"><span class="more__dot"></span></span>
+        <span class="more__text">进一步了解我们</span>
+      </a>
     </div>
-
-    <figure class="net rise" style="--d:4" data-net>
-      <div class="net__stage">
-        <svg viewBox="0 0 584 388" role="img" aria-label="一个由十二个节点组成的网络。请求从左向右传递，响应以蓝色返回。"></svg>
-        <span class="net__tag net__tag--req" aria-hidden="true">请求</span>
-        <span class="net__tag net__tag--res" aria-hidden="true">响应</span>
-      </div>
-      <figcaption class="net__panel">
-        <p class="net__hint">点击任意一条连接将其切断，响应会从另一条路径返回。</p>
-        <div class="net__row">
-          <dl class="net__read">
-            <div data-net-live><dt>请求</dt><dd data-net-sent>0</dd></div>
-            <div data-net-live><dt>响应</dt><dd data-net-answered>0</dd></div>
-            <div><dt>已切断</dt><dd data-net-cut>0/23</dd></div>
-          </dl>
-          <div class="net__actions">
-            <button type="button" class="btn" data-net-break>切断一条连接</button>
-            <button type="button" class="btn" data-net-heal disabled>修复网络</button>
-          </div>
-        </div>
-        <p class="net__status" role="status" data-net-status></p>
-      </figcaption>
-    </figure>
+    <!-- Metal amblem bu SVG'nin tam üstünde çizilir; sahne çalışmazsa SVG görünür kalır -->
+    <div class="hero__stage rise" style="--d:1" aria-hidden="true">
+      <svg class="hero__mark" viewBox="0 0 189.25 227.6" data-scene-anchor><use href="#brgrn-mark"/></svg>
+    </div>
   </section>
 
-  <section class="band" id="ilkeler" aria-labelledby="ilkeler-baslik">
-    <h2 class="band__title" id="ilkeler-baslik">什么是高韧性系统？</h2>
-    <p class="band__lead">无论是语言、语音、图像还是预测，我们对每个项目都坚持四点。</p>
-    <ul class="rules">
-      <li class="rule">
+  <section class="band" data-line id="ilkeler" aria-labelledby="ilkeler-baslik">
+    <h2 class="band__title" data-reveal id="ilkeler-baslik"><span>什么是高韧性系统？</span></h2>
+    <p class="band__lead" data-reveal style="--i:1">无论是语言、语音、图像还是预测，我们对每个项目都坚持四点。</p>
+    <div class="band__box proof">
+      <ul class="rules">
+        <li class="rule" data-reveal style="--i:0">
         <svg class="rule__fig" viewBox="0 0 96 48" aria-hidden="true">
           <path class="ln off" d="M10 30H86"/>
           <path class="ln on" d="M10 30L28 12H68L86 30"/>
@@ -126,7 +115,7 @@
         <h3 class="rule__name">备用路径</h3>
         <p class="rule__text">主模型响应变慢或宕机时，请求会转到备用模型，用户不会看到错误。</p>
       </li>
-      <li class="rule">
+        <li class="rule" data-reveal style="--i:1">
         <svg class="rule__fig" viewBox="0 0 96 48" aria-hidden="true">
           <path class="ln" d="M8 42H88M48 42V34.5"/>
           <path class="ln on" d="M24 42V13.5M72 42V19.5"/>
@@ -137,7 +126,7 @@
         <h3 class="rule__name">置信度阈值</h3>
         <p class="rule__text">模型没有把握时不会猜测，而是标明不确定性，或将任务交给人工处理。</p>
       </li>
-      <li class="rule">
+        <li class="rule" data-reveal style="--i:2">
         <svg class="rule__fig" viewBox="0 0 96 48" aria-hidden="true">
           <path class="ln on" d="M10 24H34L48 10L62 24L48 38L34 24M62 24H82"/>
           <path class="ln on" d="M42.5 24.5L46.5 28.5L54 20.5"/>
@@ -146,7 +135,7 @@
         <h3 class="rule__name">上线前评测</h3>
         <p class="rule__text">每次改动都在固定测试集上评测；结果变差就不上线。</p>
       </li>
-      <li class="rule">
+        <li class="rule" data-reveal style="--i:3">
         <svg class="rule__fig" viewBox="0 0 96 48" aria-hidden="true">
           <path class="ln on" d="M20 6H76V42H20Z"/>
           <path class="ln" d="M34 32L48 18L62 32Z"/>
@@ -155,59 +144,82 @@
         <h3 class="rule__name">数据不出内网</h3>
         <p class="rule__text">数据敏感时，模型部署在机构自有的服务器上，数据不外流。</p>
       </li>
-    </ul>
+      </ul>
+      <figure class="net" data-net data-reveal style="--i:2">
+        <div class="net__stage">
+          <svg viewBox="0 0 584 388" role="img" aria-label="一个由十二个节点组成的网络。请求从左向右传递，响应以蓝色返回。"></svg>
+          <span class="net__tag net__tag--req" aria-hidden="true">请求</span>
+          <span class="net__tag net__tag--res" aria-hidden="true">响应</span>
+        </div>
+        <figcaption class="net__panel">
+          <p class="net__hint">点击任意一条连接将其切断，响应会从另一条路径返回。</p>
+          <div class="net__row">
+            <dl class="net__read">
+              <div data-net-live><dt>请求</dt><dd data-net-sent>0</dd></div>
+              <div data-net-live><dt>响应</dt><dd data-net-answered>0</dd></div>
+              <div><dt>已切断</dt><dd data-net-cut>0/23</dd></div>
+            </dl>
+            <div class="net__actions">
+              <button type="button" class="btn" data-net-break>切断一条连接</button>
+              <button type="button" class="btn" data-net-heal disabled>修复网络</button>
+            </div>
+          </div>
+          <p class="net__status" role="status" data-net-status></p>
+        </figcaption>
+      </figure>
+    </div>
   </section>
 
-  <section class="band" id="birikim" aria-labelledby="birikim-baslik">
-    <h2 class="band__title" id="birikim-baslik">技术能力</h2>
-    <p class="band__lead">我们从事的技术方向。</p>
+  <section class="band" data-line id="birikim" aria-labelledby="birikim-baslik">
+    <h2 class="band__title" data-reveal id="birikim-baslik"><span>技术能力</span></h2>
+    <p class="band__lead" data-reveal style="--i:1">我们从事的技术方向。</p>
     <div class="band__box">
       <ul class="fields">
-        <li class="field">
+        <li class="field" data-reveal style="--i:0">
           <h3 class="field__name">智能体系统</h3>
           <p class="field__text">分工明确的多智能体团队；负责规划、执行与审核的智能体；可无人值守运行长任务的工作流。</p>
         </li>
-        <li class="field">
+        <li class="field" data-reveal style="--i:1">
           <h3 class="field__name">企业搜索与 RAG</h3>
           <p class="field__text">文档切分、向量化与检索；回答附带来源；翻译与摘要。</p>
         </li>
-        <li class="field">
+        <li class="field" data-reveal style="--i:2">
           <h3 class="field__name">语音识别与听写</h3>
           <p class="field__text">识别领域术语的语音识别；确定性术语词典；实时文本纠正。</p>
         </li>
-        <li class="field">
+        <li class="field" data-reveal style="--i:0">
           <h3 class="field__name">语音助手</h3>
           <p class="field__text">通过对话完成事务的助手：语音识别、对话管理与语音合成一体化。</p>
         </li>
-        <li class="field">
+        <li class="field" data-reveal style="--i:1">
           <h3 class="field__name">对话分析</h3>
           <p class="field__text">录音转写、说话人识别；提取摘要、决议与待办事项。</p>
         </li>
-        <li class="field">
+        <li class="field" data-reveal style="--i:2">
           <h3 class="field__name">文档理解与 OCR</h3>
           <p class="field__text">用视觉语言模型读取扫描文档；字段抽取；基于规则的自动核查。</p>
         </li>
-        <li class="field">
+        <li class="field" data-reveal style="--i:0">
           <h3 class="field__name">图像理解</h3>
           <p class="field__text">分类、分割，以及基于深度数据的尺寸估计。</p>
         </li>
-        <li class="field">
+        <li class="field" data-reveal style="--i:1">
           <h3 class="field__name">图像与视频生成</h3>
           <p class="field__text">保持身份一致的图像生成、会说话的数字人、语音合成。</p>
         </li>
-        <li class="field">
+        <li class="field" data-reveal style="--i:2">
           <h3 class="field__name">决策支持与优化</h3>
           <p class="field__text">基于规则与约束的优化引擎；由语言模型解释每个结果的依据。</p>
         </li>
-        <li class="field">
+        <li class="field" data-reveal style="--i:0">
           <h3 class="field__name">模型适配</h3>
           <p class="field__text">LoRA 微调；领域词典与确定性纠错层。</p>
         </li>
-        <li class="field">
+        <li class="field" data-reveal style="--i:1">
           <h3 class="field__name">模型部署与基础设施</h3>
           <p class="field__text">在本地 GPU 上运行开源模型：vLLM、并发与内存调优、带密钥的 API 网关。</p>
         </li>
-        <li class="field">
+        <li class="field" data-reveal style="--i:2">
           <h3 class="field__name">移动端与边缘设备</h3>
           <p class="field__text">在手机和边缘设备上运行模型的应用。</p>
         </li>
@@ -215,31 +227,31 @@
     </div>
   </section>
 
-  <section class="band" id="akis" aria-labelledby="akis-baslik">
-    <h2 class="band__title" id="akis-baslik">输入什么，输出什么？</h2>
-    <p class="band__lead">输入语音、文档、图像、文本或数据；输出转写、摘要、回答、决策或图像。</p>
+  <section class="band" data-line id="akis" aria-labelledby="akis-baslik">
+    <h2 class="band__title" data-reveal id="akis-baslik"><span>输入什么，输出什么？</span></h2>
+    <p class="band__lead" data-reveal style="--i:1">输入语音、文档、图像、文本或数据；输出转写、摘要、回答、决策或图像。</p>
     <div class="band__box">
-      <figure class="flow" data-flow>
+      <figure class="flow" data-flow data-reveal style="--i:2">
         <svg viewBox="0 0 448 240" role="img" aria-label="五类输入流向中央的 BRGRN 标志，并以五类输出之一流出。"></svg>
       </figure>
     </div>
   </section>
 
-  <section class="band" id="iletisim" aria-labelledby="iletisim-baslik">
-    <h2 class="band__title" id="iletisim-baslik">联系我们</h2>
-    <p class="band__lead">请告诉我们您的项目，我们一起探讨可行的方案。</p>
+  <section class="band" data-line id="iletisim" aria-labelledby="iletisim-baslik">
+    <h2 class="band__title" data-reveal id="iletisim-baslik"><span>联系我们</span></h2>
+    <p class="band__lead" data-reveal style="--i:1">告诉我们您需要什么样的系统，我们会说明如何为您构建。</p>
     <div class="band__box contact">
-      <div class="contact__direct">
+      <div class="contact__direct" data-reveal style="--i:2">
         <a class="contact__mail" href="mailto:iletisim@brgrn.com.tr">iletisim@brgrn.com.tr</a>
         <button type="button" class="btn" aria-live="polite" data-copy="iletisim@brgrn.com.tr" data-copied="已复制" data-failed="复制失败">复制地址</button>
       </div>
-      <form class="form" action="mailto:iletisim@brgrn.com.tr" method="post" enctype="text/plain" data-form data-to="iletisim@brgrn.com.tr" data-endpoint="https://api.web3forms.com/submit" data-key="6263e61d-820e-4bec-a939-a9ad86c16db8">
+      <form class="form" data-reveal style="--i:3" action="mailto:iletisim@brgrn.com.tr" method="post" enctype="text/plain" data-form data-to="iletisim@brgrn.com.tr" data-endpoint="https://api.web3forms.com/submit" data-key="6263e61d-820e-4bec-a939-a9ad86c16db8">
         <div class="form__pair">
           <label class="form__field"><span>姓名</span><input type="text" name="name" autocomplete="name" required maxlength="120"></label>
           <label class="form__field"><span>电子邮箱</span><input type="email" name="email" autocomplete="email" required maxlength="160"></label>
         </div>
         <label class="form__field"><span>主题</span><input type="text" name="subject" required maxlength="160"></label>
-        <label class="form__field"><span>留言</span><textarea name="message" rows="5" required maxlength="5000"></textarea></label>
+        <label class="form__field"><span>留言</span><textarea name="message" rows="5" required maxlength="5000" placeholder="您需要什么样的系统？"></textarea></label>
         <input type="checkbox" name="botcheck" class="form__trap" tabindex="-1" autocomplete="off" aria-hidden="true">
         <div class="form__foot">
           <button type="submit" class="btn btn--main">发送留言</button>
@@ -260,9 +272,11 @@
 </footer>
 
 <script type="application/json" id="i18n">{"net": {"down": "已无可用路径，等待修复。", "rerouted": "连接已切断，响应正在改走其他路径。", "unaffected": "连接已切断，当前路径未受影响。", "healed_hand": "连接已修复。", "healed_self": "连接已自动修复。", "healed_all": "网络已修复。"}, "flow": {"in": ["语音", "文档", "图像", "文本", "数据"], "out": ["转写", "摘要", "回答", "决策", "图像"]}, "form": {"sending": "正在发送…", "sent": "留言已送达。我们会回复到您填写的邮箱。", "failed": "留言发送失败。请重试，或直接写信至 iletisim@brgrn.com.tr。", "mailto": "已打开您的邮件程序，请在其中完成发送。"}}</script>
-<script src="../assets/js/theme.js?v=9" defer></script>
-<script src="../assets/js/network.js?v=9" defer></script>
-<script src="../assets/js/flow.js?v=9" defer></script>
-<script src="../assets/js/contact.js?v=9" defer></script>
+<script src="../assets/js/theme.js?v=16" defer></script>
+<script src="../assets/js/scene.js?v=16" defer></script>
+<script src="../assets/js/reveal.js?v=16" defer></script>
+<script src="../assets/js/network.js?v=16" defer></script>
+<script src="../assets/js/flow.js?v=16" defer></script>
+<script src="../assets/js/contact.js?v=16" defer></script>
 </body>
 </html>

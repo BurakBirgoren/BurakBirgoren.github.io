@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{{title}}</title>
 <meta name="description" content="{{description}}">
-<meta name="theme-color" content="#050506">
+<meta name="theme-color" content="#050508">
 <meta name="color-scheme" content="dark light">
 <link rel="canonical" href="{{url}}">
 {{hreflang}}
@@ -49,9 +49,12 @@
   </defs>
 </svg>
 
+<canvas class="scene" data-scene aria-hidden="true"></canvas>
+
 <a class="skip" href="#icerik">{{skip}}</a>
 
 <header class="top">
+<div class="top__in">
   <a class="top__home" href="{{home}}" aria-label="{{home_label}}">
     <svg class="top__mark" viewBox="0 0 189.25 227.6" aria-hidden="true"><use href="#brgrn-mark"/></svg>
   </a>
@@ -66,49 +69,35 @@
   <button type="button" class="top__theme" data-theme-toggle aria-pressed="false" aria-label="{{theme_label}}" title="{{theme_label}}">
     <svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="7.25"/><path d="M10 2.75a7.25 7.25 0 0 1 0 14.5z"/></svg>
   </button>
+</div>
 </header>
 
 <main id="icerik">
 
   <section class="hero" aria-labelledby="baslik">
     <div class="hero__id">
-      <svg class="hero__mark rise" style="--d:0" viewBox="0 0 189.25 227.6" aria-hidden="true"><use href="#brgrn-mark"/></svg>
-      <h1 class="hero__word rise" style="--d:1" id="baslik">
+      <h1 class="hero__word rise" style="--d:0" id="baslik">
         <svg viewBox="0 0 710.1 73.2" role="img" aria-label="BRGRN"><use href="#brgrn-word"/></svg>
       </h1>
-      <p class="tagline rise" style="--d:2" lang="en"><span>Building Resilient Generative Response Networks</span></p>
-      <p class="lede rise" style="--d:3">{{lede}}</p>
+      <p class="tagline rise" style="--d:1" lang="en"><span>Building Resilient Generative Response Networks</span></p>
+      <p class="lede rise" style="--d:2">{{lede}}</p>
+      <a class="more rise" style="--d:3" href="#ilkeler">
+        <span class="more__track" aria-hidden="true"><span class="more__dot"></span></span>
+        <span class="more__text">{{more}}</span>
+      </a>
     </div>
-
-    <figure class="net rise" style="--d:4" data-net>
-      <div class="net__stage">
-        <svg viewBox="0 0 584 388" role="img" aria-label="{{net_aria}}"></svg>
-        <span class="net__tag net__tag--req" aria-hidden="true">{{net_req}}</span>
-        <span class="net__tag net__tag--res" aria-hidden="true">{{net_res}}</span>
-      </div>
-      <figcaption class="net__panel">
-        <p class="net__hint">{{net_hint}}</p>
-        <div class="net__row">
-          <dl class="net__read">
-            <div data-net-live><dt>{{net_req}}</dt><dd data-net-sent>0</dd></div>
-            <div data-net-live><dt>{{net_res}}</dt><dd data-net-answered>0</dd></div>
-            <div><dt>{{net_cut_label}}</dt><dd data-net-cut>0/23</dd></div>
-          </dl>
-          <div class="net__actions">
-            <button type="button" class="btn" data-net-break>{{net_break}}</button>
-            <button type="button" class="btn" data-net-heal disabled>{{net_heal}}</button>
-          </div>
-        </div>
-        <p class="net__status" role="status" data-net-status></p>
-      </figcaption>
-    </figure>
+    <!-- Metal amblem bu SVG'nin tam üstünde çizilir; sahne çalışmazsa SVG görünür kalır -->
+    <div class="hero__stage rise" style="--d:1" aria-hidden="true">
+      <svg class="hero__mark" viewBox="0 0 189.25 227.6" data-scene-anchor><use href="#brgrn-mark"/></svg>
+    </div>
   </section>
 
-  <section class="band" id="ilkeler" aria-labelledby="ilkeler-baslik">
-    <h2 class="band__title" id="ilkeler-baslik">{{principles_title}}</h2>
-    <p class="band__lead">{{principles_lead}}</p>
-    <ul class="rules">
-      <li class="rule">
+  <section class="band" data-line id="ilkeler" aria-labelledby="ilkeler-baslik">
+    <h2 class="band__title" data-reveal id="ilkeler-baslik"><span>{{principles_title}}</span></h2>
+    <p class="band__lead" data-reveal style="--i:1">{{principles_lead}}</p>
+    <div class="band__box proof">
+      <ul class="rules">
+        <li class="rule" data-reveal style="--i:0">
         <svg class="rule__fig" viewBox="0 0 96 48" aria-hidden="true">
           <path class="ln off" d="M10 30H86"/>
           <path class="ln on" d="M10 30L28 12H68L86 30"/>
@@ -118,7 +107,7 @@
         <h3 class="rule__name">{{p1_name}}</h3>
         <p class="rule__text">{{p1_text}}</p>
       </li>
-      <li class="rule">
+        <li class="rule" data-reveal style="--i:1">
         <svg class="rule__fig" viewBox="0 0 96 48" aria-hidden="true">
           <path class="ln" d="M8 42H88M48 42V34.5"/>
           <path class="ln on" d="M24 42V13.5M72 42V19.5"/>
@@ -129,7 +118,7 @@
         <h3 class="rule__name">{{p2_name}}</h3>
         <p class="rule__text">{{p2_text}}</p>
       </li>
-      <li class="rule">
+        <li class="rule" data-reveal style="--i:2">
         <svg class="rule__fig" viewBox="0 0 96 48" aria-hidden="true">
           <path class="ln on" d="M10 24H34L48 10L62 24L48 38L34 24M62 24H82"/>
           <path class="ln on" d="M42.5 24.5L46.5 28.5L54 20.5"/>
@@ -138,7 +127,7 @@
         <h3 class="rule__name">{{p3_name}}</h3>
         <p class="rule__text">{{p3_text}}</p>
       </li>
-      <li class="rule">
+        <li class="rule" data-reveal style="--i:3">
         <svg class="rule__fig" viewBox="0 0 96 48" aria-hidden="true">
           <path class="ln on" d="M20 6H76V42H20Z"/>
           <path class="ln" d="M34 32L48 18L62 32Z"/>
@@ -147,12 +136,35 @@
         <h3 class="rule__name">{{p4_name}}</h3>
         <p class="rule__text">{{p4_text}}</p>
       </li>
-    </ul>
+      </ul>
+      <figure class="net" data-net data-reveal style="--i:2">
+        <div class="net__stage">
+          <svg viewBox="0 0 584 388" role="img" aria-label="{{net_aria}}"></svg>
+          <span class="net__tag net__tag--req" aria-hidden="true">{{net_req}}</span>
+          <span class="net__tag net__tag--res" aria-hidden="true">{{net_res}}</span>
+        </div>
+        <figcaption class="net__panel">
+          <p class="net__hint">{{net_hint}}</p>
+          <div class="net__row">
+            <dl class="net__read">
+              <div data-net-live><dt>{{net_req}}</dt><dd data-net-sent>0</dd></div>
+              <div data-net-live><dt>{{net_res}}</dt><dd data-net-answered>0</dd></div>
+              <div><dt>{{net_cut_label}}</dt><dd data-net-cut>0/23</dd></div>
+            </dl>
+            <div class="net__actions">
+              <button type="button" class="btn" data-net-break>{{net_break}}</button>
+              <button type="button" class="btn" data-net-heal disabled>{{net_heal}}</button>
+            </div>
+          </div>
+          <p class="net__status" role="status" data-net-status></p>
+        </figcaption>
+      </figure>
+    </div>
   </section>
 
-  <section class="band" id="birikim" aria-labelledby="birikim-baslik">
-    <h2 class="band__title" id="birikim-baslik">{{fields_title}}</h2>
-    <p class="band__lead">{{fields_lead}}</p>
+  <section class="band" data-line id="birikim" aria-labelledby="birikim-baslik">
+    <h2 class="band__title" data-reveal id="birikim-baslik"><span>{{fields_title}}</span></h2>
+    <p class="band__lead" data-reveal style="--i:1">{{fields_lead}}</p>
     <div class="band__box">
       <ul class="fields">
 {{fields}}
@@ -160,31 +172,31 @@
     </div>
   </section>
 
-  <section class="band" id="akis" aria-labelledby="akis-baslik">
-    <h2 class="band__title" id="akis-baslik">{{flow_title}}</h2>
-    <p class="band__lead">{{flow_lead}}</p>
+  <section class="band" data-line id="akis" aria-labelledby="akis-baslik">
+    <h2 class="band__title" data-reveal id="akis-baslik"><span>{{flow_title}}</span></h2>
+    <p class="band__lead" data-reveal style="--i:1">{{flow_lead}}</p>
     <div class="band__box">
-      <figure class="flow" data-flow>
+      <figure class="flow" data-flow data-reveal style="--i:2">
         <svg viewBox="0 0 448 240" role="img" aria-label="{{flow_aria}}"></svg>
       </figure>
     </div>
   </section>
 
-  <section class="band" id="iletisim" aria-labelledby="iletisim-baslik">
-    <h2 class="band__title" id="iletisim-baslik">{{contact_title}}</h2>
-    <p class="band__lead">{{contact_lead}}</p>
+  <section class="band" data-line id="iletisim" aria-labelledby="iletisim-baslik">
+    <h2 class="band__title" data-reveal id="iletisim-baslik"><span>{{contact_title}}</span></h2>
+    <p class="band__lead" data-reveal style="--i:1">{{contact_lead}}</p>
     <div class="band__box contact">
-      <div class="contact__direct">
+      <div class="contact__direct" data-reveal style="--i:2">
         <a class="contact__mail" href="mailto:{{mail}}">{{mail}}</a>
         <button type="button" class="btn" aria-live="polite" data-copy="{{mail}}" data-copied="{{copied}}" data-failed="{{copy_failed}}">{{copy}}</button>
       </div>
-      <form class="form" action="mailto:{{mail}}" method="post" enctype="text/plain" data-form data-to="{{mail}}" data-endpoint="{{form_endpoint}}" data-key="{{form_key}}">
+      <form class="form" data-reveal style="--i:3" action="mailto:{{mail}}" method="post" enctype="text/plain" data-form data-to="{{mail}}" data-endpoint="{{form_endpoint}}" data-key="{{form_key}}">
         <div class="form__pair">
           <label class="form__field"><span>{{form_name}}</span><input type="text" name="name" autocomplete="name" required maxlength="120"></label>
           <label class="form__field"><span>{{form_email}}</span><input type="email" name="email" autocomplete="email" required maxlength="160"></label>
         </div>
         <label class="form__field"><span>{{form_subject}}</span><input type="text" name="subject" required maxlength="160"></label>
-        <label class="form__field"><span>{{form_message}}</span><textarea name="message" rows="5" required maxlength="5000"></textarea></label>
+        <label class="form__field"><span>{{form_message}}</span><textarea name="message" rows="5" required maxlength="5000" placeholder="{{form_message_placeholder}}"></textarea></label>
         <input type="checkbox" name="botcheck" class="form__trap" tabindex="-1" autocomplete="off" aria-hidden="true">
         <div class="form__foot">
           <button type="submit" class="btn btn--main">{{form_send}}</button>
@@ -206,6 +218,8 @@
 
 <script type="application/json" id="i18n">{{i18n_json}}</script>
 <script src="{{root}}assets/js/theme.js?v={{ver}}" defer></script>
+<script src="{{root}}assets/js/scene.js?v={{ver}}" defer></script>
+<script src="{{root}}assets/js/reveal.js?v={{ver}}" defer></script>
 <script src="{{root}}assets/js/network.js?v={{ver}}" defer></script>
 <script src="{{root}}assets/js/flow.js?v={{ver}}" defer></script>
 <script src="{{root}}assets/js/contact.js?v={{ver}}" defer></script>

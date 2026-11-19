@@ -24,7 +24,10 @@ python3 tools/build.py
 |---|---|
 | `404.html` | Olmayan adreslerde gösterilen sayfa (stili ve logosu içinde) |
 | `assets/css/site.css` | Stil; renkler ve yazı tipleri en üstte `:root` içinde |
-| `assets/js/network.js` | Giriş bölümündeki canlı ağ |
+| `assets/js/scene.js` | Giriş sahnesi: kıvrımlarından katlanan, ışık alan metal amblem (WebGL, kütüphanesiz) |
+| `assets/js/reveal.js` | Kaydırdıkça beliren bölümler, yapışkan üst şerit |
+| `assets/js/theme.js` | Açık / koyu tema düğmesi |
+| `assets/js/network.js` | İlkeler bölümündeki canlı ağ |
 | `assets/js/flow.js` | Girdi → çıktı akışı |
 | `assets/js/contact.js` | İletişim bölümü: "adresi kopyala" düğmesi ve mesaj formu |
 | `assets/img/` | Logo: `mark.svg` (amblem), `wordmark.svg` (yazı), site simgeleri |

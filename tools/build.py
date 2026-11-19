@@ -14,7 +14,7 @@ import pathlib
 import re
 import sys
 
-VER = "9"
+VER = "16"
 LANGS = ["tr", "en", "de", "zh"]          # ilk dil kök adreste yayınlanır
 HREFLANG = {"tr": "tr", "en": "en", "de": "de", "zh": "zh-Hans"}
 
@@ -63,10 +63,10 @@ def build(lang):
     )
 
     fields = "\n".join(
-        f'''        <li class="field">
+        f'''        <li class="field" data-reveal style="--i:{n % 3}">
           <h3 class="field__name">{esc(item["name"])}</h3>
           <p class="field__text">{esc(item["text"])}</p>
-        </li>''' for item in t["fields"]
+        </li>''' for n, item in enumerate(t["fields"])
     )
 
     # Betiklerin kullandığı metinler sayfaya JSON olarak gömülür.

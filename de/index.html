@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>BRGRN — Building Resilient Generative Response Networks</title>
 <meta name="description" content="BRGRN baut generative KI-Systeme, die auch dann antworten, wenn ein Teil ausfällt.">
-<meta name="theme-color" content="#050506">
+<meta name="theme-color" content="#050508">
 <meta name="color-scheme" content="dark light">
 <link rel="canonical" href="https://brgrn.com.tr/de/">
 <link rel="alternate" hreflang="tr" href="https://brgrn.com.tr/">
@@ -31,7 +31,7 @@
 <link rel="apple-touch-icon" href="../assets/img/apple-touch-icon.png">
 <link rel="preload" href="../assets/fonts/ibm-plex-sans-latin-400.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="../assets/fonts/michroma-latin-400.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="../assets/css/site.css?v=9">
+<link rel="stylesheet" href="../assets/css/site.css?v=16">
 <script>(function () { var d = document.documentElement; d.className = 'js'; try { if (localStorage.getItem('brgrn-tema') === 'light') d.setAttribute('data-theme', 'light'); } catch (e) {} })();</script>
 </head>
 <body>
@@ -54,9 +54,12 @@
   </defs>
 </svg>
 
+<canvas class="scene" data-scene aria-hidden="true"></canvas>
+
 <a class="skip" href="#icerik">Zum Inhalt springen</a>
 
 <header class="top">
+<div class="top__in">
   <a class="top__home" href="../" aria-label="BRGRN Startseite">
     <svg class="top__mark" viewBox="0 0 189.25 227.6" aria-hidden="true"><use href="#brgrn-mark"/></svg>
   </a>
@@ -74,49 +77,35 @@
   <button type="button" class="top__theme" data-theme-toggle aria-pressed="false" aria-label="Zwischen hellem und dunklem Design wechseln" title="Zwischen hellem und dunklem Design wechseln">
     <svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="7.25"/><path d="M10 2.75a7.25 7.25 0 0 1 0 14.5z"/></svg>
   </button>
+</div>
 </header>
 
 <main id="icerik">
 
   <section class="hero" aria-labelledby="baslik">
     <div class="hero__id">
-      <svg class="hero__mark rise" style="--d:0" viewBox="0 0 189.25 227.6" aria-hidden="true"><use href="#brgrn-mark"/></svg>
-      <h1 class="hero__word rise" style="--d:1" id="baslik">
+      <h1 class="hero__word rise" style="--d:0" id="baslik">
         <svg viewBox="0 0 710.1 73.2" role="img" aria-label="BRGRN"><use href="#brgrn-word"/></svg>
       </h1>
-      <p class="tagline rise" style="--d:2" lang="en"><span>Building Resilient Generative Response Networks</span></p>
-      <p class="lede rise" style="--d:3">Wir bauen generative KI-Systeme, die auch dann antworten, wenn ein Teil ausfällt.</p>
+      <p class="tagline rise" style="--d:1" lang="en"><span>Building Resilient Generative Response Networks</span></p>
+      <p class="lede rise" style="--d:2">Wir bauen generative KI-Systeme, die auch dann antworten, wenn ein Teil ausfällt.</p>
+      <a class="more rise" style="--d:3" href="#ilkeler">
+        <span class="more__track" aria-hidden="true"><span class="more__dot"></span></span>
+        <span class="more__text">Lernen Sie uns kennen</span>
+      </a>
     </div>
-
-    <figure class="net rise" style="--d:4" data-net>
-      <div class="net__stage">
-        <svg viewBox="0 0 584 388" role="img" aria-label="Ein Netz aus zwölf Knoten. Die Anfrage läuft von links nach rechts, die Antwort kommt in Blau zurück."></svg>
-        <span class="net__tag net__tag--req" aria-hidden="true">Anfrage</span>
-        <span class="net__tag net__tag--res" aria-hidden="true">Antwort</span>
-      </div>
-      <figcaption class="net__panel">
-        <p class="net__hint">Klicken Sie auf eine Verbindung, um sie zu trennen. Die Antwort kommt über einen anderen Weg zurück.</p>
-        <div class="net__row">
-          <dl class="net__read">
-            <div data-net-live><dt>Anfrage</dt><dd data-net-sent>0</dd></div>
-            <div data-net-live><dt>Antwort</dt><dd data-net-answered>0</dd></div>
-            <div><dt>Getrennt</dt><dd data-net-cut>0/23</dd></div>
-          </dl>
-          <div class="net__actions">
-            <button type="button" class="btn" data-net-break>Verbindung trennen</button>
-            <button type="button" class="btn" data-net-heal disabled>Netz reparieren</button>
-          </div>
-        </div>
-        <p class="net__status" role="status" data-net-status></p>
-      </figcaption>
-    </figure>
+    <!-- Metal amblem bu SVG'nin tam üstünde çizilir; sahne çalışmazsa SVG görünür kalır -->
+    <div class="hero__stage rise" style="--d:1" aria-hidden="true">
+      <svg class="hero__mark" viewBox="0 0 189.25 227.6" data-scene-anchor><use href="#brgrn-mark"/></svg>
+    </div>
   </section>
 
-  <section class="band" id="ilkeler" aria-labelledby="ilkeler-baslik">
-    <h2 class="band__title" id="ilkeler-baslik">Was macht ein System resilient?</h2>
-    <p class="band__lead">Text, Sprache, Bild oder Prognose: Bei jedem Projekt setzen wir vier Dinge voraus.</p>
-    <ul class="rules">
-      <li class="rule">
+  <section class="band" data-line id="ilkeler" aria-labelledby="ilkeler-baslik">
+    <h2 class="band__title" data-reveal id="ilkeler-baslik"><span>Was macht ein System resilient?</span></h2>
+    <p class="band__lead" data-reveal style="--i:1">Text, Sprache, Bild oder Prognose: Bei jedem Projekt setzen wir vier Dinge voraus.</p>
+    <div class="band__box proof">
+      <ul class="rules">
+        <li class="rule" data-reveal style="--i:0">
         <svg class="rule__fig" viewBox="0 0 96 48" aria-hidden="true">
           <path class="ln off" d="M10 30H86"/>
           <path class="ln on" d="M10 30L28 12H68L86 30"/>
@@ -126,7 +115,7 @@
         <h3 class="rule__name">Ausweichpfad</h3>
         <p class="rule__text">Ist das primäre Modell langsam oder fällt es aus, geht die Anfrage an ein Ersatzmodell. Der Nutzer sieht keinen Fehler.</p>
       </li>
-      <li class="rule">
+        <li class="rule" data-reveal style="--i:1">
         <svg class="rule__fig" viewBox="0 0 96 48" aria-hidden="true">
           <path class="ln" d="M8 42H88M48 42V34.5"/>
           <path class="ln on" d="M24 42V13.5M72 42V19.5"/>
@@ -137,7 +126,7 @@
         <h3 class="rule__name">Konfidenzschwelle</h3>
         <p class="rule__text">Wo das Modell unsicher ist, rät es nicht. Es zeigt die Unsicherheit an oder übergibt die Aufgabe an einen Menschen.</p>
       </li>
-      <li class="rule">
+        <li class="rule" data-reveal style="--i:2">
         <svg class="rule__fig" viewBox="0 0 96 48" aria-hidden="true">
           <path class="ln on" d="M10 24H34L48 10L62 24L48 38L34 24M62 24H82"/>
           <path class="ln on" d="M42.5 24.5L46.5 28.5L54 20.5"/>
@@ -146,7 +135,7 @@
         <h3 class="rule__name">Messen vor dem Release</h3>
         <p class="rule__text">Wir messen jede Änderung an einem festen Testdatensatz. Verschlechtert sich das Ergebnis, geht sie nicht live.</p>
       </li>
-      <li class="rule">
+        <li class="rule" data-reveal style="--i:3">
         <svg class="rule__fig" viewBox="0 0 96 48" aria-hidden="true">
           <path class="ln on" d="M20 6H76V42H20Z"/>
           <path class="ln" d="M34 32L48 18L62 32Z"/>
@@ -155,59 +144,82 @@
         <h3 class="rule__name">Daten bleiben intern</h3>
         <p class="rule__text">Bei sensiblen Daten laufen die Modelle auf den eigenen Servern der Organisation. Nichts verlässt das Haus.</p>
       </li>
-    </ul>
+      </ul>
+      <figure class="net" data-net data-reveal style="--i:2">
+        <div class="net__stage">
+          <svg viewBox="0 0 584 388" role="img" aria-label="Ein Netz aus zwölf Knoten. Die Anfrage läuft von links nach rechts, die Antwort kommt in Blau zurück."></svg>
+          <span class="net__tag net__tag--req" aria-hidden="true">Anfrage</span>
+          <span class="net__tag net__tag--res" aria-hidden="true">Antwort</span>
+        </div>
+        <figcaption class="net__panel">
+          <p class="net__hint">Klicken Sie auf eine Verbindung, um sie zu trennen. Die Antwort kommt über einen anderen Weg zurück.</p>
+          <div class="net__row">
+            <dl class="net__read">
+              <div data-net-live><dt>Anfrage</dt><dd data-net-sent>0</dd></div>
+              <div data-net-live><dt>Antwort</dt><dd data-net-answered>0</dd></div>
+              <div><dt>Getrennt</dt><dd data-net-cut>0/23</dd></div>
+            </dl>
+            <div class="net__actions">
+              <button type="button" class="btn" data-net-break>Verbindung trennen</button>
+              <button type="button" class="btn" data-net-heal disabled>Netz reparieren</button>
+            </div>
+          </div>
+          <p class="net__status" role="status" data-net-status></p>
+        </figcaption>
+      </figure>
+    </div>
   </section>
 
-  <section class="band" id="birikim" aria-labelledby="birikim-baslik">
-    <h2 class="band__title" id="birikim-baslik">Technische Kompetenzen</h2>
-    <p class="band__lead">Die Bereiche, in denen wir arbeiten.</p>
+  <section class="band" data-line id="birikim" aria-labelledby="birikim-baslik">
+    <h2 class="band__title" data-reveal id="birikim-baslik"><span>Technische Kompetenzen</span></h2>
+    <p class="band__lead" data-reveal style="--i:1">Die Bereiche, in denen wir arbeiten.</p>
     <div class="band__box">
       <ul class="fields">
-        <li class="field">
+        <li class="field" data-reveal style="--i:0">
           <h3 class="field__name">Agentensysteme</h3>
           <p class="field__text">Multi-Agenten-Teams mit verteilten Rollen; Agenten, die planen, ausführen und prüfen; Workflows, die lange Aufgaben unbeaufsichtigt abarbeiten.</p>
         </li>
-        <li class="field">
+        <li class="field" data-reveal style="--i:1">
           <h3 class="field__name">Unternehmenssuche und RAG</h3>
           <p class="field__text">Dokumente zerlegen, einbetten und abrufen; Antworten mit Quellenangabe; Übersetzung und Zusammenfassung.</p>
         </li>
-        <li class="field">
+        <li class="field" data-reveal style="--i:2">
           <h3 class="field__name">Spracherkennung und Diktat</h3>
           <p class="field__text">Spracherkennung mit Fachvokabular; deterministische Begriffswörterbücher; Textkorrektur in Echtzeit.</p>
         </li>
-        <li class="field">
+        <li class="field" data-reveal style="--i:0">
           <h3 class="field__name">Sprachassistenten</h3>
           <p class="field__text">Assistenten, die Vorgänge per Sprache erledigen: Spracherkennung, Dialogsteuerung und Sprachsynthese in einer Pipeline.</p>
         </li>
-        <li class="field">
+        <li class="field" data-reveal style="--i:1">
           <h3 class="field__name">Gesprächsanalyse</h3>
           <p class="field__text">Transkription aus Audioaufnahmen, Sprechererkennung; Zusammenfassung, Entscheidungen und Aufgaben.</p>
         </li>
-        <li class="field">
+        <li class="field" data-reveal style="--i:2">
           <h3 class="field__name">Dokumentenverständnis und OCR</h3>
           <p class="field__text">Gescannte Dokumente mit Vision-Language-Modellen lesen; Felder extrahieren; automatische regelbasierte Prüfung.</p>
         </li>
-        <li class="field">
+        <li class="field" data-reveal style="--i:0">
           <h3 class="field__name">Bildverständnis</h3>
           <p class="field__text">Klassifikation, Segmentierung und Größenschätzung mit Tiefendaten.</p>
         </li>
-        <li class="field">
+        <li class="field" data-reveal style="--i:1">
           <h3 class="field__name">Bild- und Videogenerierung</h3>
           <p class="field__text">Identitätserhaltende Bildgenerierung, sprechende Avatare, Sprachsynthese.</p>
         </li>
-        <li class="field">
+        <li class="field" data-reveal style="--i:2">
           <h3 class="field__name">Entscheidungsunterstützung und Optimierung</h3>
           <p class="field__text">Regel- und constraintbasierte Optimierung; eine Sprachmodell-Schicht, die jedes Ergebnis begründet.</p>
         </li>
-        <li class="field">
+        <li class="field" data-reveal style="--i:0">
           <h3 class="field__name">Modellanpassung</h3>
           <p class="field__text">Fine-Tuning mit LoRA; Fachwörterbücher und deterministische Korrekturschichten.</p>
         </li>
-        <li class="field">
+        <li class="field" data-reveal style="--i:1">
           <h3 class="field__name">Modellbetrieb und Infrastruktur</h3>
           <p class="field__text">Offene Modelle auf eigenen GPUs betreiben: vLLM, Parallelität und Speicher-Tuning, API-Gateway mit Schlüsseln.</p>
         </li>
-        <li class="field">
+        <li class="field" data-reveal style="--i:2">
           <h3 class="field__name">Mobil und Edge</h3>
           <p class="field__text">Anwendungen, die das Modell auf dem Smartphone und auf Edge-Geräten ausführen.</p>
         </li>
@@ -215,31 +227,31 @@
     </div>
   </section>
 
-  <section class="band" id="akis" aria-labelledby="akis-baslik">
-    <h2 class="band__title" id="akis-baslik">Was geht rein, was kommt raus?</h2>
-    <p class="band__lead">Audio, Dokumente, Bilder, Text oder Daten gehen rein; Transkripte, Zusammenfassungen, Antworten, Entscheidungen oder Bilder kommen raus.</p>
+  <section class="band" data-line id="akis" aria-labelledby="akis-baslik">
+    <h2 class="band__title" data-reveal id="akis-baslik"><span>Was geht rein, was kommt raus?</span></h2>
+    <p class="band__lead" data-reveal style="--i:1">Audio, Dokumente, Bilder, Text oder Daten gehen rein; Transkripte, Zusammenfassungen, Antworten, Entscheidungen oder Bilder kommen raus.</p>
     <div class="band__box">
-      <figure class="flow" data-flow>
+      <figure class="flow" data-flow data-reveal style="--i:2">
         <svg viewBox="0 0 448 240" role="img" aria-label="Fünf Eingabearten fließen in das BRGRN-Zeichen in der Mitte und verlassen es als eine von fünf Ausgabearten."></svg>
       </figure>
     </div>
   </section>
 
-  <section class="band" id="iletisim" aria-labelledby="iletisim-baslik">
-    <h2 class="band__title" id="iletisim-baslik">Kontakt</h2>
-    <p class="band__lead">Beschreiben Sie Ihr Projekt; wir klären gemeinsam, was möglich ist.</p>
+  <section class="band" data-line id="iletisim" aria-labelledby="iletisim-baslik">
+    <h2 class="band__title" data-reveal id="iletisim-baslik"><span>Kontakt</span></h2>
+    <p class="band__lead" data-reveal style="--i:1">Beschreiben Sie, welches System Sie brauchen; wir erklären, wie wir es bauen würden.</p>
     <div class="band__box contact">
-      <div class="contact__direct">
+      <div class="contact__direct" data-reveal style="--i:2">
         <a class="contact__mail" href="mailto:iletisim@brgrn.com.tr">iletisim@brgrn.com.tr</a>
         <button type="button" class="btn" aria-live="polite" data-copy="iletisim@brgrn.com.tr" data-copied="Kopiert" data-failed="Kopieren fehlgeschlagen">Adresse kopieren</button>
       </div>
-      <form class="form" action="mailto:iletisim@brgrn.com.tr" method="post" enctype="text/plain" data-form data-to="iletisim@brgrn.com.tr" data-endpoint="https://api.web3forms.com/submit" data-key="6263e61d-820e-4bec-a939-a9ad86c16db8">
+      <form class="form" data-reveal style="--i:3" action="mailto:iletisim@brgrn.com.tr" method="post" enctype="text/plain" data-form data-to="iletisim@brgrn.com.tr" data-endpoint="https://api.web3forms.com/submit" data-key="6263e61d-820e-4bec-a939-a9ad86c16db8">
         <div class="form__pair">
           <label class="form__field"><span>Vor- und Nachname</span><input type="text" name="name" autocomplete="name" required maxlength="120"></label>
           <label class="form__field"><span>E-Mail</span><input type="email" name="email" autocomplete="email" required maxlength="160"></label>
         </div>
         <label class="form__field"><span>Betreff</span><input type="text" name="subject" required maxlength="160"></label>
-        <label class="form__field"><span>Nachricht</span><textarea name="message" rows="5" required maxlength="5000"></textarea></label>
+        <label class="form__field"><span>Nachricht</span><textarea name="message" rows="5" required maxlength="5000" placeholder="Welches System brauchen Sie?"></textarea></label>
         <input type="checkbox" name="botcheck" class="form__trap" tabindex="-1" autocomplete="off" aria-hidden="true">
         <div class="form__foot">
           <button type="submit" class="btn btn--main">Nachricht senden</button>
@@ -260,9 +272,11 @@
 </footer>
 
 <script type="application/json" id="i18n">{"net": {"down": "Kein Weg mehr frei. Warten auf Reparatur.", "rerouted": "Verbindung getrennt. Die Antwort nimmt einen anderen Weg.", "unaffected": "Verbindung getrennt. Der genutzte Weg ist nicht betroffen.", "healed_hand": "Verbindung repariert.", "healed_self": "Die Verbindung hat sich selbst repariert.", "healed_all": "Netz repariert."}, "flow": {"in": ["Audio", "Dokument", "Bild", "Text", "Daten"], "out": ["Transkript", "Zusammenfassung", "Antwort", "Entscheidung", "Bild"]}, "form": {"sending": "Wird gesendet…", "sent": "Ihre Nachricht ist angekommen. Wir antworten an die angegebene E-Mail-Adresse.", "failed": "Die Nachricht konnte nicht gesendet werden. Versuchen Sie es erneut oder schreiben Sie direkt an iletisim@brgrn.com.tr.", "mailto": "Ihr E-Mail-Programm wurde geöffnet. Schließen Sie den Versand dort ab."}}</script>
-<script src="../assets/js/theme.js?v=9" defer></script>
-<script src="../assets/js/network.js?v=9" defer></script>
-<script src="../assets/js/flow.js?v=9" defer></script>
-<script src="../assets/js/contact.js?v=9" defer></script>
+<script src="../assets/js/theme.js?v=16" defer></script>
+<script src="../assets/js/scene.js?v=16" defer></script>
+<script src="../assets/js/reveal.js?v=16" defer></script>
+<script src="../assets/js/network.js?v=16" defer></script>
+<script src="../assets/js/flow.js?v=16" defer></script>
+<script src="../assets/js/contact.js?v=16" defer></script>
 </body>
 </html>
