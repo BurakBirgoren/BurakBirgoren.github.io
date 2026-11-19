@@ -1,0 +1,8 @@
+Bu klasördeki yazı tipleri SIL Open Font License 1.1 ile dağıtılır.
+Lisans metni: https://openfontlicense.org/open-font-license-official-text/
+
+Michroma        — Copyright (c) 2011, Vernon Adams
+IBM Plex Sans   — Copyright (c) 2017 IBM Corp., Reserved Font Name "Plex"
+IBM Plex Mono   — Copyright (c) 2017 IBM Corp., Reserved Font Name "Plex"
+
+Dosyalar Fontsource paketlerinden alındı (latin ve latin-ext alt kümeleri).
