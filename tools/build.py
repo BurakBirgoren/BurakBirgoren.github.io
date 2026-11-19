@@ -14,7 +14,7 @@ import pathlib
 import re
 import sys
 
-VER = "8"
+VER = "9"
 LANGS = ["tr", "en", "de", "zh"]          # ilk dil kök adreste yayınlanır
 HREFLANG = {"tr": "tr", "en": "en", "de": "de", "zh": "zh-Hans"}
 

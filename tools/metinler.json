@@ -10,7 +10,7 @@
     "html_lang": "tr", "og_locale": "tr_TR", "lang_name": "Türkçe", "lang_code": "TR",
     "title": "BRGRN — Building Resilient Generative Response Networks",
     "description": "BRGRN: bir parçası düşse de yanıt vermeyi sürdüren üretken yapay zekâ sistemleri kuruyoruz.",
-    "skip": "İçeriğe geç", "home_label": "BRGRN ana sayfa", "nav_label": "Bölümler", "lang_label": "Dil",
+    "skip": "İçeriğe geç", "home_label": "BRGRN ana sayfa", "nav_label": "Bölümler", "lang_label": "Dil", "theme_label": "Açık ya da koyu temaya geç",
     "nav_principles": "İlkeler", "nav_fields": "Birikim", "nav_contact": "İletişim",
     "lede": "Bir parçası düşse de yanıt vermeyi sürdüren üretken yapay zekâ sistemleri kuruyoruz.",
 
@@ -77,7 +77,7 @@
     "html_lang": "en", "og_locale": "en_US", "lang_name": "English", "lang_code": "EN",
     "title": "BRGRN — Building Resilient Generative Response Networks",
     "description": "BRGRN builds generative AI systems that keep answering even when a part fails.",
-    "skip": "Skip to content", "home_label": "BRGRN home", "nav_label": "Sections", "lang_label": "Language",
+    "skip": "Skip to content", "home_label": "BRGRN home", "nav_label": "Sections", "lang_label": "Language", "theme_label": "Switch between light and dark theme",
     "nav_principles": "Principles", "nav_fields": "Expertise", "nav_contact": "Contact",
     "lede": "We build generative AI systems that keep answering even when a part fails.",
 
@@ -144,7 +144,7 @@
     "html_lang": "de", "og_locale": "de_DE", "lang_name": "Deutsch", "lang_code": "DE",
     "title": "BRGRN — Building Resilient Generative Response Networks",
     "description": "BRGRN baut generative KI-Systeme, die auch dann antworten, wenn ein Teil ausfällt.",
-    "skip": "Zum Inhalt springen", "home_label": "BRGRN Startseite", "nav_label": "Abschnitte", "lang_label": "Sprache",
+    "skip": "Zum Inhalt springen", "home_label": "BRGRN Startseite", "nav_label": "Abschnitte", "lang_label": "Sprache", "theme_label": "Zwischen hellem und dunklem Design wechseln",
     "nav_principles": "Prinzipien", "nav_fields": "Kompetenzen", "nav_contact": "Kontakt",
     "lede": "Wir bauen generative KI-Systeme, die auch dann antworten, wenn ein Teil ausfällt.",
 
@@ -211,7 +211,7 @@
     "html_lang": "zh-Hans", "og_locale": "zh_CN", "lang_name": "中文", "lang_code": "中文",
     "title": "BRGRN — Building Resilient Generative Response Networks",
     "description": "BRGRN 构建生成式人工智能系统：即使某个部分失效，系统仍能持续响应。",
-    "skip": "跳到正文", "home_label": "BRGRN 首页", "nav_label": "页面导航", "lang_label": "语言",
+    "skip": "跳到正文", "home_label": "BRGRN 首页", "nav_label": "页面导航", "lang_label": "语言", "theme_label": "切换浅色或深色主题",
     "nav_principles": "原则", "nav_fields": "技术能力", "nav_contact": "联系我们",
     "lede": "我们构建生成式人工智能系统：即使某个部分失效，系统仍能持续响应。",
 

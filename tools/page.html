@@ -6,7 +6,7 @@
 <title>{{title}}</title>
 <meta name="description" content="{{description}}">
 <meta name="theme-color" content="#050506">
-<meta name="color-scheme" content="dark">
+<meta name="color-scheme" content="dark light">
 <link rel="canonical" href="{{url}}">
 {{hreflang}}
 <meta property="og:type" content="website">
@@ -27,16 +27,16 @@
 <link rel="preload" href="{{root}}assets/fonts/ibm-plex-sans-latin-400.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="{{root}}assets/fonts/michroma-latin-400.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="{{root}}assets/css/site.css?v={{ver}}">
-<script>document.documentElement.className = 'js';</script>
+<script>(function () { var d = document.documentElement; d.className = 'js'; try { if (localStorage.getItem('brgrn-tema') === 'light') d.setAttribute('data-theme', 'light'); } catch (e) {} })();</script>
 </head>
 <body>
 <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
   <defs>
-    <linearGradient id="brgrn-m1" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="0" y2="227.6"><stop offset="0" stop-color="#fff"/><stop offset="1" stop-color="#d7d9de"/></linearGradient>
-    <linearGradient id="brgrn-m2" gradientUnits="userSpaceOnUse" x1="93.25" y1="126.2" x2="41.7" y2="177.75"><stop offset="0" stop-color="#8b9099"/><stop offset=".5" stop-color="#d9dbe0"/><stop offset="1" stop-color="#eeeff1"/></linearGradient>
-    <linearGradient id="brgrn-m3" gradientUnits="userSpaceOnUse" x1="0" y1="92.25" x2="0" y2="227.6"><stop offset="0" stop-color="#aeb2ba"/><stop offset=".16" stop-color="#f4f5f6"/><stop offset="1" stop-color="#dcdee2"/></linearGradient>
-    <linearGradient id="brgrn-w1" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="0" y2="73.2"><stop offset="0" stop-color="#fff"/><stop offset="1" stop-color="#d2d4d9"/></linearGradient>
-    <linearGradient id="brgrn-w2" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="0" y2="73.2"><stop offset="0" stop-color="#6679ff"/><stop offset="1" stop-color="#4659ee"/></linearGradient>
+    <linearGradient id="brgrn-m1" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="0" y2="227.6"><stop offset="0" style="stop-color:var(--m1a)"/><stop offset="1" style="stop-color:var(--m1b)"/></linearGradient>
+    <linearGradient id="brgrn-m2" gradientUnits="userSpaceOnUse" x1="93.25" y1="126.2" x2="41.7" y2="177.75"><stop offset="0" style="stop-color:var(--m2a)"/><stop offset=".5" style="stop-color:var(--m2b)"/><stop offset="1" style="stop-color:var(--m2c)"/></linearGradient>
+    <linearGradient id="brgrn-m3" gradientUnits="userSpaceOnUse" x1="0" y1="92.25" x2="0" y2="227.6"><stop offset="0" style="stop-color:var(--m3a)"/><stop offset=".16" style="stop-color:var(--m3b)"/><stop offset="1" style="stop-color:var(--m3c)"/></linearGradient>
+    <linearGradient id="brgrn-w1" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="0" y2="73.2"><stop offset="0" style="stop-color:var(--w1a)"/><stop offset="1" style="stop-color:var(--w1b)"/></linearGradient>
+    <linearGradient id="brgrn-w2" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="0" y2="73.2"><stop offset="0" style="stop-color:var(--w2a)"/><stop offset="1" style="stop-color:var(--w2b)"/></linearGradient>
     <path id="brgrn-b" fill-rule="evenodd" d="M0 0H88C94.76 0 104.1 9.86 104.1 17V26.5C104.1 30.5 101.5 33.8 98.4 35.3C102.2 37.6 106.5 42.5 106.5 49.5V56.5C106.5 63.51 96.93 73.2 90 73.2H0ZM15.3 12.9H83.6C86.1 12.9 88.6 15.4 88.6 17.9V23.2C88.6 26.7 85.1 30.2 81.6 30.2H15.3ZM15.3 42.6H84.4C87.65 42.6 90.9 45.85 90.9 49.1V54.4C90.9 57.4 87.9 60.4 84.9 60.4H15.3Z"/>
     <path id="brgrn-r" d="M0 0H91C97.93 0 107.5 10.15 107.5 17.5V27C107.5 35.28 97.33 45.4 89 45.4H82.8L109.5 73.2H91L63.6 45.4H30V33.1H85C88.6 33.1 92.2 29.65 92.2 26.2V18.6C92.2 15.75 89.35 12.9 86.5 12.9H15.2V73.2H0Z"/>
     <path id="brgrn-g" d="M105 0V13H28C21.71 13 15.9 19.72 15.9 27V48C15.9 54.45 21.71 60.4 28 60.4H86C88.75 60.4 91.5 57.7 91.5 55V42.9H54.5V30.4H106.9V57C106.9 63.8 97.68 73.2 91 73.2H24C10.8 73.2 0 61.64 0 47.5V27C0 12.15 11.25 0 25 0Z"/>
@@ -63,6 +63,9 @@
   <nav class="top__lang" aria-label="{{lang_label}}">
 {{lang_switch}}
   </nav>
+  <button type="button" class="top__theme" data-theme-toggle aria-pressed="false" aria-label="{{theme_label}}" title="{{theme_label}}">
+    <svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="7.25"/><path d="M10 2.75a7.25 7.25 0 0 1 0 14.5z"/></svg>
+  </button>
 </header>
 
 <main id="icerik">
@@ -202,6 +205,7 @@
 </footer>
 
 <script type="application/json" id="i18n">{{i18n_json}}</script>
+<script src="{{root}}assets/js/theme.js?v={{ver}}" defer></script>
 <script src="{{root}}assets/js/network.js?v={{ver}}" defer></script>
 <script src="{{root}}assets/js/flow.js?v={{ver}}" defer></script>
 <script src="{{root}}assets/js/contact.js?v={{ver}}" defer></script>

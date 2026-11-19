@@ -65,7 +65,7 @@
     const [x, y] = px(GRID[name]);
     if (name === 'S' || name === 'T') {
       const res = name === 'T';
-      rings[name] = el('circle', { class: 'net__ring', cx: x, cy: y, r: 9, stroke: res ? '#8494ff' : '#ffffff' }, gNodes);
+      rings[name] = el('circle', { class: 'net__ring' + (res ? ' net__ring--res' : ''), cx: x, cy: y, r: 9 }, gNodes);
       el('circle', { class: 'net__end' + (res ? ' net__end--res' : ''), cx: x, cy: y, r: 8 }, gNodes);
       el('circle', { class: 'net__core' + (res ? ' net__core--res' : ''), cx: x, cy: y, r: 2.75 }, gNodes);
     } else {
