@@ -1,0 +1,276 @@
+{
+  "_site": {
+    "url": "https://brgrn.com.tr/",
+    "mail": "iletisim@brgrn.com.tr",
+    "form_endpoint": "https://api.web3forms.com/submit",
+    "form_key": ""
+  },
+
+  "tr": {
+    "html_lang": "tr", "og_locale": "tr_TR", "lang_name": "Türkçe", "lang_code": "TR",
+    "title": "BRGRN — Building Resilient Generative Response Networks",
+    "description": "BRGRN: bir parçası düşse de yanıt vermeyi sürdüren üretken yapay zekâ sistemleri kuruyoruz.",
+    "skip": "İçeriğe geç", "home_label": "BRGRN ana sayfa", "nav_label": "Bölümler", "lang_label": "Dil",
+    "nav_principles": "İlkeler", "nav_fields": "Birikim", "nav_contact": "İletişim",
+    "lede": "Bir parçası düşse de yanıt vermeyi sürdüren üretken yapay zekâ sistemleri kuruyoruz.",
+
+    "net_aria": "On iki düğümlü bir ağ. İstek soldan sağa gider, yanıt mavi renkte geri döner.",
+    "net_req": "İstek", "net_res": "Yanıt", "net_cut_label": "Kopuk",
+    "net_hint": "Bir bağlantıya tıkla, kopsun. Yanıt başka yoldan döner.",
+    "net_break": "Bir bağlantı kopar", "net_heal": "Ağı onar",
+    "net_msg": {
+      "down": "Yol kalmadı. Onarım bekleniyor.",
+      "rerouted": "Bağlantı koptu. Yanıt başka yoldan dönüyor.",
+      "unaffected": "Bağlantı koptu. Kullanılan yol etkilenmedi.",
+      "healed_hand": "Bağlantı onarıldı.",
+      "healed_self": "Bağlantı kendini onardı.",
+      "healed_all": "Ağ onarıldı."
+    },
+
+    "principles_title": "Dayanıklı sistem ne demek?",
+    "principles_lead": "Dil, ses, görüntü ya da tahmin; proje ne olursa olsun dört şeyi şart koşuyoruz.",
+    "principles": [
+      { "name": "Yedek yol", "text": "Birincil model geç kalır ya da düşerse istek yedek modele geçer. Kullanıcı hata görmez." },
+      { "name": "Güven eşiği", "text": "Model emin olmadığı yerde tahmin yürütmez. Belirsizliği gösterir ya da işi insana devreder." },
+      { "name": "Yayından önce ölçüm", "text": "Her değişikliği sabit bir test setinde ölçeriz. Sonuç geriliyorsa yayına çıkmaz." },
+      { "name": "Veri içeride", "text": "Veri hassassa modeller kurumun kendi sunucusunda çalışır. Dışarıya veri gitmez." }
+    ],
+
+    "fields_title": "Teknik birikim",
+    "fields_lead": "Üzerinde çalıştığımız alanlar.",
+    "fields": [
+      { "name": "Ajan sistemleri", "text": "Rol dağılımlı çok ajanlı ekipler; planlayan, uygulayan ve denetleyen ajanlar; uzun işleri gözetimsiz yürüten iş akışları." },
+      { "name": "Kurumsal arama ve RAG", "text": "Belgeyi parçalama, gömme ve getirme; kaynağını gösteren yanıt; çeviri ve özetleme." },
+      { "name": "Konuşma tanıma ve dikte", "text": "Alan terimlerine duyarlı konuşma tanıma; deterministik terim sözlüğü; canlı metin düzeltme." },
+      { "name": "Sesli asistanlar", "text": "Konuşarak işlem yapan asistanlar: konuşma tanıma, diyalog yönetimi ve ses sentezi tek hatta." },
+      { "name": "Konuşma analizi", "text": "Ses kaydından döküm, konuşmacı tanıma; özet, karar ve aksiyon çıkarımı." },
+      { "name": "Belge anlama ve OCR", "text": "Taranmış belgeyi görsel dil modelleriyle okuma; alan çıkarımı; kurala göre otomatik kontrol." },
+      { "name": "Görüntü anlama", "text": "Sınıflandırma, segmentasyon ve derinlik verisiyle boyut kestirimi." },
+      { "name": "Görsel ve video üretimi", "text": "Kimliği koruyan görsel üretim, konuşan avatar, ses sentezi." },
+      { "name": "Karar destek ve eniyileme", "text": "Kural ve kısıt tabanlı eniyileme motorları; sonucu gerekçesiyle açıklayan dil modeli katmanı." },
+      { "name": "Model uyarlama", "text": "LoRA ile ince ayar; alan sözlükleri ve deterministik düzeltme katmanları." },
+      { "name": "Model sunumu ve altyapı", "text": "Açık modelleri kurum içi GPU'da çalıştırma: vLLM, eşzamanlılık ve bellek ayarı, anahtarlı API geçidi." },
+      { "name": "Mobil ve uç cihaz", "text": "Modeli telefonda ve uç cihazda çalıştıran uygulamalar." }
+    ],
+
+    "flow_title": "Ne girer, ne çıkar?",
+    "flow_lead": "Ses, belge, görüntü, metin ya da veri girer; döküm, özet, yanıt, karar ya da görsel çıkar.",
+    "flow_aria": "Beş girdi türü ortadaki BRGRN amblemine akar ve beş çıktı türünden biri olarak çıkar.",
+    "flow_in": ["Ses", "Belge", "Görüntü", "Metin", "Veri"],
+    "flow_out": ["Döküm", "Özet", "Yanıt", "Karar", "Görsel"],
+
+    "contact_title": "İletişim",
+    "contact_lead": "Projenizi anlatın; ne yapılabileceğini birlikte konuşalım.",
+    "copy": "Adresi kopyala", "copied": "Kopyalandı", "copy_failed": "Kopyalanamadı",
+    "form_name": "Ad soyad", "form_email": "E-posta", "form_subject": "Konu", "form_message": "Mesaj",
+    "form_send": "Mesajı gönder",
+    "form_note": "Bu bilgileri yalnızca size yanıt vermek için kullanırız.",
+    "form_msg": {
+      "sending": "Gönderiliyor…",
+      "sent": "Mesajınız ulaştı. Yanıtı yazdığınız e-posta adresine göndereceğiz.",
+      "failed": "Mesaj gönderilemedi. Yeniden deneyin ya da doğrudan iletisim@brgrn.com.tr adresine yazın.",
+      "mailto": "Posta programınız açıldı. Gönderimi oradan tamamlayın."
+    }
+  },
+
+  "en": {
+    "html_lang": "en", "og_locale": "en_US", "lang_name": "English", "lang_code": "EN",
+    "title": "BRGRN — Building Resilient Generative Response Networks",
+    "description": "BRGRN builds generative AI systems that keep answering even when a part fails.",
+    "skip": "Skip to content", "home_label": "BRGRN home", "nav_label": "Sections", "lang_label": "Language",
+    "nav_principles": "Principles", "nav_fields": "Expertise", "nav_contact": "Contact",
+    "lede": "We build generative AI systems that keep answering even when a part fails.",
+
+    "net_aria": "A network of twelve nodes. The request travels left to right; the response returns in blue.",
+    "net_req": "Request", "net_res": "Response", "net_cut_label": "Cut",
+    "net_hint": "Click a link to cut it. The response comes back another way.",
+    "net_break": "Cut a link", "net_heal": "Repair network",
+    "net_msg": {
+      "down": "No path left. Waiting for repair.",
+      "rerouted": "Link cut. The response is taking another path.",
+      "unaffected": "Link cut. The path in use is unaffected.",
+      "healed_hand": "Link repaired.",
+      "healed_self": "Link repaired itself.",
+      "healed_all": "Network repaired."
+    },
+
+    "principles_title": "What makes a system resilient?",
+    "principles_lead": "Language, speech, vision or prediction: whatever the project, we require four things.",
+    "principles": [
+      { "name": "Fallback path", "text": "If the primary model is slow or goes down, the request moves to a backup model. The user never sees an error." },
+      { "name": "Confidence threshold", "text": "Where the model is not sure, it does not guess. It shows the uncertainty or hands the task to a person." },
+      { "name": "Measured before release", "text": "We measure every change on a fixed test set. If results regress, it does not ship." },
+      { "name": "Data stays inside", "text": "When data is sensitive, models run on the organization's own servers. Nothing leaves." }
+    ],
+
+    "fields_title": "Technical expertise",
+    "fields_lead": "The areas we work in.",
+    "fields": [
+      { "name": "Agent systems", "text": "Multi-agent teams with assigned roles; agents that plan, execute and review; workflows that run long tasks unattended." },
+      { "name": "Enterprise search and RAG", "text": "Chunking, embedding and retrieval; answers that cite their source; translation and summarization." },
+      { "name": "Speech recognition and dictation", "text": "Domain-aware speech recognition; deterministic term dictionaries; live text correction." },
+      { "name": "Voice assistants", "text": "Assistants that get things done by voice: speech recognition, dialogue management and speech synthesis in one pipeline." },
+      { "name": "Conversation analysis", "text": "Transcription from audio, speaker identification; summaries, decisions and action items." },
+      { "name": "Document understanding and OCR", "text": "Reading scanned documents with vision-language models; field extraction; automated rule-based checks." },
+      { "name": "Image understanding", "text": "Classification, segmentation and size estimation from depth data." },
+      { "name": "Image and video generation", "text": "Identity-preserving image generation, talking avatars, speech synthesis." },
+      { "name": "Decision support and optimization", "text": "Rule- and constraint-based optimization engines; a language-model layer that explains each result." },
+      { "name": "Model adaptation", "text": "Fine-tuning with LoRA; domain dictionaries and deterministic correction layers." },
+      { "name": "Model serving and infrastructure", "text": "Running open models on on-premise GPUs: vLLM, concurrency and memory tuning, a keyed API gateway." },
+      { "name": "Mobile and edge", "text": "Applications that run the model on phones and edge devices." }
+    ],
+
+    "flow_title": "What goes in, what comes out?",
+    "flow_lead": "Speech, documents, images, text or data go in; transcripts, summaries, answers, decisions or images come out.",
+    "flow_aria": "Five input types flow into the BRGRN mark in the center and leave as one of five output types.",
+    "flow_in": ["Speech", "Document", "Image", "Text", "Data"],
+    "flow_out": ["Transcript", "Summary", "Answer", "Decision", "Image"],
+
+    "contact_title": "Contact",
+    "contact_lead": "Tell us about your project and we will work out what can be done.",
+    "copy": "Copy address", "copied": "Copied", "copy_failed": "Could not copy",
+    "form_name": "Full name", "form_email": "Email", "form_subject": "Subject", "form_message": "Message",
+    "form_send": "Send message",
+    "form_note": "We use this information only to reply to you.",
+    "form_msg": {
+      "sending": "Sending…",
+      "sent": "Your message has arrived. We will reply to the email address you entered.",
+      "failed": "The message could not be sent. Try again, or write directly to iletisim@brgrn.com.tr.",
+      "mailto": "Your mail app has opened. Finish sending from there."
+    }
+  },
+
+  "de": {
+    "html_lang": "de", "og_locale": "de_DE", "lang_name": "Deutsch", "lang_code": "DE",
+    "title": "BRGRN — Building Resilient Generative Response Networks",
+    "description": "BRGRN baut generative KI-Systeme, die auch dann antworten, wenn ein Teil ausfällt.",
+    "skip": "Zum Inhalt springen", "home_label": "BRGRN Startseite", "nav_label": "Abschnitte", "lang_label": "Sprache",
+    "nav_principles": "Prinzipien", "nav_fields": "Kompetenzen", "nav_contact": "Kontakt",
+    "lede": "Wir bauen generative KI-Systeme, die auch dann antworten, wenn ein Teil ausfällt.",
+
+    "net_aria": "Ein Netz aus zwölf Knoten. Die Anfrage läuft von links nach rechts, die Antwort kommt in Blau zurück.",
+    "net_req": "Anfrage", "net_res": "Antwort", "net_cut_label": "Getrennt",
+    "net_hint": "Klicken Sie auf eine Verbindung, um sie zu trennen. Die Antwort kommt über einen anderen Weg zurück.",
+    "net_break": "Verbindung trennen", "net_heal": "Netz reparieren",
+    "net_msg": {
+      "down": "Kein Weg mehr frei. Warten auf Reparatur.",
+      "rerouted": "Verbindung getrennt. Die Antwort nimmt einen anderen Weg.",
+      "unaffected": "Verbindung getrennt. Der genutzte Weg ist nicht betroffen.",
+      "healed_hand": "Verbindung repariert.",
+      "healed_self": "Die Verbindung hat sich selbst repariert.",
+      "healed_all": "Netz repariert."
+    },
+
+    "principles_title": "Was macht ein System resilient?",
+    "principles_lead": "Text, Sprache, Bild oder Prognose: Bei jedem Projekt setzen wir vier Dinge voraus.",
+    "principles": [
+      { "name": "Ausweichpfad", "text": "Ist das primäre Modell langsam oder fällt es aus, geht die Anfrage an ein Ersatzmodell. Der Nutzer sieht keinen Fehler." },
+      { "name": "Konfidenzschwelle", "text": "Wo das Modell unsicher ist, rät es nicht. Es zeigt die Unsicherheit an oder übergibt die Aufgabe an einen Menschen." },
+      { "name": "Messen vor dem Release", "text": "Wir messen jede Änderung an einem festen Testdatensatz. Verschlechtert sich das Ergebnis, geht sie nicht live." },
+      { "name": "Daten bleiben intern", "text": "Bei sensiblen Daten laufen die Modelle auf den eigenen Servern der Organisation. Nichts verlässt das Haus." }
+    ],
+
+    "fields_title": "Technische Kompetenzen",
+    "fields_lead": "Die Bereiche, in denen wir arbeiten.",
+    "fields": [
+      { "name": "Agentensysteme", "text": "Multi-Agenten-Teams mit verteilten Rollen; Agenten, die planen, ausführen und prüfen; Workflows, die lange Aufgaben unbeaufsichtigt abarbeiten." },
+      { "name": "Unternehmenssuche und RAG", "text": "Dokumente zerlegen, einbetten und abrufen; Antworten mit Quellenangabe; Übersetzung und Zusammenfassung." },
+      { "name": "Spracherkennung und Diktat", "text": "Spracherkennung mit Fachvokabular; deterministische Begriffswörterbücher; Textkorrektur in Echtzeit." },
+      { "name": "Sprachassistenten", "text": "Assistenten, die Vorgänge per Sprache erledigen: Spracherkennung, Dialogsteuerung und Sprachsynthese in einer Pipeline." },
+      { "name": "Gesprächsanalyse", "text": "Transkription aus Audioaufnahmen, Sprechererkennung; Zusammenfassung, Entscheidungen und Aufgaben." },
+      { "name": "Dokumentenverständnis und OCR", "text": "Gescannte Dokumente mit Vision-Language-Modellen lesen; Felder extrahieren; automatische regelbasierte Prüfung." },
+      { "name": "Bildverständnis", "text": "Klassifikation, Segmentierung und Größenschätzung mit Tiefendaten." },
+      { "name": "Bild- und Videogenerierung", "text": "Identitätserhaltende Bildgenerierung, sprechende Avatare, Sprachsynthese." },
+      { "name": "Entscheidungsunterstützung und Optimierung", "text": "Regel- und constraintbasierte Optimierung; eine Sprachmodell-Schicht, die jedes Ergebnis begründet." },
+      { "name": "Modellanpassung", "text": "Fine-Tuning mit LoRA; Fachwörterbücher und deterministische Korrekturschichten." },
+      { "name": "Modellbetrieb und Infrastruktur", "text": "Offene Modelle auf eigenen GPUs betreiben: vLLM, Parallelität und Speicher-Tuning, API-Gateway mit Schlüsseln." },
+      { "name": "Mobil und Edge", "text": "Anwendungen, die das Modell auf dem Smartphone und auf Edge-Geräten ausführen." }
+    ],
+
+    "flow_title": "Was geht rein, was kommt raus?",
+    "flow_lead": "Audio, Dokumente, Bilder, Text oder Daten gehen rein; Transkripte, Zusammenfassungen, Antworten, Entscheidungen oder Bilder kommen raus.",
+    "flow_aria": "Fünf Eingabearten fließen in das BRGRN-Zeichen in der Mitte und verlassen es als eine von fünf Ausgabearten.",
+    "flow_in": ["Audio", "Dokument", "Bild", "Text", "Daten"],
+    "flow_out": ["Transkript", "Zusammenfassung", "Antwort", "Entscheidung", "Bild"],
+
+    "contact_title": "Kontakt",
+    "contact_lead": "Beschreiben Sie Ihr Projekt; wir klären gemeinsam, was möglich ist.",
+    "copy": "Adresse kopieren", "copied": "Kopiert", "copy_failed": "Kopieren fehlgeschlagen",
+    "form_name": "Vor- und Nachname", "form_email": "E-Mail", "form_subject": "Betreff", "form_message": "Nachricht",
+    "form_send": "Nachricht senden",
+    "form_note": "Wir verwenden diese Angaben nur, um Ihnen zu antworten.",
+    "form_msg": {
+      "sending": "Wird gesendet…",
+      "sent": "Ihre Nachricht ist angekommen. Wir antworten an die angegebene E-Mail-Adresse.",
+      "failed": "Die Nachricht konnte nicht gesendet werden. Versuchen Sie es erneut oder schreiben Sie direkt an iletisim@brgrn.com.tr.",
+      "mailto": "Ihr E-Mail-Programm wurde geöffnet. Schließen Sie den Versand dort ab."
+    }
+  },
+
+  "zh": {
+    "html_lang": "zh-Hans", "og_locale": "zh_CN", "lang_name": "中文", "lang_code": "中文",
+    "title": "BRGRN — Building Resilient Generative Response Networks",
+    "description": "BRGRN 构建生成式人工智能系统：即使某个部分失效，系统仍能持续响应。",
+    "skip": "跳到正文", "home_label": "BRGRN 首页", "nav_label": "页面导航", "lang_label": "语言",
+    "nav_principles": "原则", "nav_fields": "技术能力", "nav_contact": "联系我们",
+    "lede": "我们构建生成式人工智能系统：即使某个部分失效，系统仍能持续响应。",
+
+    "net_aria": "一个由十二个节点组成的网络。请求从左向右传递，响应以蓝色返回。",
+    "net_req": "请求", "net_res": "响应", "net_cut_label": "已切断",
+    "net_hint": "点击任意一条连接将其切断，响应会从另一条路径返回。",
+    "net_break": "切断一条连接", "net_heal": "修复网络",
+    "net_msg": {
+      "down": "已无可用路径，等待修复。",
+      "rerouted": "连接已切断，响应正在改走其他路径。",
+      "unaffected": "连接已切断，当前路径未受影响。",
+      "healed_hand": "连接已修复。",
+      "healed_self": "连接已自动修复。",
+      "healed_all": "网络已修复。"
+    },
+
+    "principles_title": "什么是高韧性系统？",
+    "principles_lead": "无论是语言、语音、图像还是预测，我们对每个项目都坚持四点。",
+    "principles": [
+      { "name": "备用路径", "text": "主模型响应变慢或宕机时，请求会转到备用模型，用户不会看到错误。" },
+      { "name": "置信度阈值", "text": "模型没有把握时不会猜测，而是标明不确定性，或将任务交给人工处理。" },
+      { "name": "上线前评测", "text": "每次改动都在固定测试集上评测；结果变差就不上线。" },
+      { "name": "数据不出内网", "text": "数据敏感时，模型部署在机构自有的服务器上，数据不外流。" }
+    ],
+
+    "fields_title": "技术能力",
+    "fields_lead": "我们从事的技术方向。",
+    "fields": [
+      { "name": "智能体系统", "text": "分工明确的多智能体团队；负责规划、执行与审核的智能体；可无人值守运行长任务的工作流。" },
+      { "name": "企业搜索与 RAG", "text": "文档切分、向量化与检索；回答附带来源；翻译与摘要。" },
+      { "name": "语音识别与听写", "text": "识别领域术语的语音识别；确定性术语词典；实时文本纠正。" },
+      { "name": "语音助手", "text": "通过对话完成事务的助手：语音识别、对话管理与语音合成一体化。" },
+      { "name": "对话分析", "text": "录音转写、说话人识别；提取摘要、决议与待办事项。" },
+      { "name": "文档理解与 OCR", "text": "用视觉语言模型读取扫描文档；字段抽取；基于规则的自动核查。" },
+      { "name": "图像理解", "text": "分类、分割，以及基于深度数据的尺寸估计。" },
+      { "name": "图像与视频生成", "text": "保持身份一致的图像生成、会说话的数字人、语音合成。" },
+      { "name": "决策支持与优化", "text": "基于规则与约束的优化引擎；由语言模型解释每个结果的依据。" },
+      { "name": "模型适配", "text": "LoRA 微调；领域词典与确定性纠错层。" },
+      { "name": "模型部署与基础设施", "text": "在本地 GPU 上运行开源模型：vLLM、并发与内存调优、带密钥的 API 网关。" },
+      { "name": "移动端与边缘设备", "text": "在手机和边缘设备上运行模型的应用。" }
+    ],
+
+    "flow_title": "输入什么，输出什么？",
+    "flow_lead": "输入语音、文档、图像、文本或数据；输出转写、摘要、回答、决策或图像。",
+    "flow_aria": "五类输入流向中央的 BRGRN 标志，并以五类输出之一流出。",
+    "flow_in": ["语音", "文档", "图像", "文本", "数据"],
+    "flow_out": ["转写", "摘要", "回答", "决策", "图像"],
+
+    "contact_title": "联系我们",
+    "contact_lead": "请告诉我们您的项目，我们一起探讨可行的方案。",
+    "copy": "复制地址", "copied": "已复制", "copy_failed": "复制失败",
+    "form_name": "姓名", "form_email": "电子邮箱", "form_subject": "主题", "form_message": "留言",
+    "form_send": "发送留言",
+    "form_note": "这些信息仅用于回复您。",
+    "form_msg": {
+      "sending": "正在发送…",
+      "sent": "留言已送达。我们会回复到您填写的邮箱。",
+      "failed": "留言发送失败。请重试，或直接写信至 iletisim@brgrn.com.tr。",
+      "mailto": "已打开您的邮件程序，请在其中完成发送。"
+    }
+  }
+}

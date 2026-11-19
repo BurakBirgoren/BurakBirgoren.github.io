@@ -1,20 +1,29 @@
 <!doctype html>
+<!-- Üretilen dosya, elle düzenlenmez. Kaynak: tools/page.html + tools/metinler.json (python3 tools/build.py) -->
 <html lang="tr" class="no-js">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>BRGRN — Building Resilient Generative Response Networks</title>
-<meta name="description" content="BRGRN: bir parçası düşse de yanıt vermeyi sürdüren üretken yapay zekâ sistemleri.">
+<meta name="description" content="BRGRN: bir parçası düşse de yanıt vermeyi sürdüren üretken yapay zekâ sistemleri kuruyoruz.">
 <meta name="theme-color" content="#050506">
 <meta name="color-scheme" content="dark">
+<link rel="canonical" href="https://brgrn.com.tr/">
+<link rel="alternate" hreflang="tr" href="https://brgrn.com.tr/">
+<link rel="alternate" hreflang="en" href="https://brgrn.com.tr/en/">
+<link rel="alternate" hreflang="de" href="https://brgrn.com.tr/de/">
+<link rel="alternate" hreflang="zh-Hans" href="https://brgrn.com.tr/zh/">
+<link rel="alternate" hreflang="x-default" href="https://brgrn.com.tr/">
 <meta property="og:type" content="website">
+<meta property="og:url" content="https://brgrn.com.tr/">
+<meta property="og:locale" content="tr_TR">
 <meta property="og:title" content="BRGRN — Building Resilient Generative Response Networks">
-<meta property="og:description" content="Bir parçası düşse de yanıt vermeyi sürdüren üretken yapay zekâ sistemleri.">
+<meta property="og:description" content="BRGRN: bir parçası düşse de yanıt vermeyi sürdüren üretken yapay zekâ sistemleri kuruyoruz.">
 <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
 <link rel="preload" href="assets/fonts/ibm-plex-sans-latin-400.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="assets/fonts/michroma-latin-400.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="assets/css/site.css">
+<link rel="stylesheet" href="assets/css/site.css?v=7">
 <script>document.documentElement.className = 'js';</script>
 </head>
 <body>
@@ -44,8 +53,15 @@
     <svg class="top__mark" viewBox="0 0 189.25 227.6" aria-hidden="true"><use href="#brgrn-mark"/></svg>
   </a>
   <nav class="top__nav" aria-label="Bölümler">
-    <a href="#ad">Ne demek</a>
-    <a href="#projeler">Projeler</a>
+    <a href="#ilkeler">İlkeler</a>
+    <a href="#birikim">Birikim</a>
+    <a href="#iletisim">İletişim</a>
+  </nav>
+  <nav class="top__lang" aria-label="Dil">
+    <a href="./" lang="tr" hreflang="tr" title="Türkçe" aria-current="true">TR</a>
+    <a href="en/" lang="en" hreflang="en" title="English">EN</a>
+    <a href="de/" lang="de" hreflang="de" title="Deutsch">DE</a>
+    <a href="zh/" lang="zh-Hans" hreflang="zh-Hans" title="中文">中文</a>
   </nav>
 </header>
 
@@ -58,7 +74,7 @@
         <svg viewBox="0 0 710.1 73.2" role="img" aria-label="BRGRN"><use href="#brgrn-word"/></svg>
       </h1>
       <p class="tagline rise" style="--d:2" lang="en"><span>Building Resilient Generative Response Networks</span></p>
-      <p class="lede rise" style="--d:3">Bir parçası düşse de yanıt vermeyi sürdüren üretken yapay zekâ sistemleri.</p>
+      <p class="lede rise" style="--d:3">Bir parçası düşse de yanıt vermeyi sürdüren üretken yapay zekâ sistemleri kuruyoruz.</p>
     </div>
 
     <figure class="net rise" style="--d:4" data-net>
@@ -85,42 +101,141 @@
     </figure>
   </section>
 
-  <section class="band" id="ad" aria-labelledby="ad-baslik">
-    <h2 class="band__title" id="ad-baslik">BRGRN ne demek?</h2>
-    <ol class="acro">
-      <li class="acro__row">
-        <svg class="acro__glyph" viewBox="0 0 110 73.2" aria-hidden="true"><use href="#brgrn-b"/></svg>
-        <span class="acro__word" lang="en">Building</span>
-        <span class="acro__text"><b>Kurmak.</b> Fikirde kalmayan, çalışan sistemler.</span>
+  <section class="band" id="ilkeler" aria-labelledby="ilkeler-baslik">
+    <h2 class="band__title" id="ilkeler-baslik">Dayanıklı sistem ne demek?</h2>
+    <p class="band__lead">Dil, ses, görüntü ya da tahmin; proje ne olursa olsun dört şeyi şart koşuyoruz.</p>
+    <ul class="rules">
+      <li class="rule">
+        <svg class="rule__fig" viewBox="0 0 96 48" aria-hidden="true">
+          <path class="ln off" d="M10 30H86"/>
+          <path class="ln on" d="M10 30L28 12H68L86 30"/>
+          <circle class="nd" cx="28" cy="12" r="2.5"/><circle class="nd" cx="68" cy="12" r="2.5"/>
+          <circle class="nd on" cx="10" cy="30" r="3.5"/><circle class="nd res" cx="86" cy="30" r="3.5"/>
+        </svg>
+        <h3 class="rule__name">Yedek yol</h3>
+        <p class="rule__text">Birincil model geç kalır ya da düşerse istek yedek modele geçer. Kullanıcı hata görmez.</p>
       </li>
-      <li class="acro__row">
-        <svg class="acro__glyph" viewBox="0 0 110 73.2" aria-hidden="true"><use href="#brgrn-r"/></svg>
-        <span class="acro__word" lang="en">Resilient</span>
-        <span class="acro__text"><b>Dayanıklı.</b> Bir bileşen durduğunda geri kalanı işi sürdürür.</span>
+      <li class="rule">
+        <svg class="rule__fig" viewBox="0 0 96 48" aria-hidden="true">
+          <path class="ln" d="M8 42H88M48 42V34.5"/>
+          <path class="ln on" d="M24 42V13.5M72 42V19.5"/>
+          <path class="ln off" d="M8 24H88"/>
+          <circle class="nd" cx="48" cy="32" r="2.5"/>
+          <circle class="nd res" cx="24" cy="10" r="3.5"/><circle class="nd res" cx="72" cy="16" r="3.5"/>
+        </svg>
+        <h3 class="rule__name">Güven eşiği</h3>
+        <p class="rule__text">Model emin olmadığı yerde tahmin yürütmez. Belirsizliği gösterir ya da işi insana devreder.</p>
       </li>
-      <li class="acro__row">
-        <svg class="acro__glyph" viewBox="0 0 110 73.2" aria-hidden="true"><use href="#brgrn-g"/></svg>
-        <span class="acro__word" lang="en">Generative</span>
-        <span class="acro__text"><b>Üretken.</b> Metin, ses ve görüntü üreten modellerle çalışır.</span>
+      <li class="rule">
+        <svg class="rule__fig" viewBox="0 0 96 48" aria-hidden="true">
+          <path class="ln on" d="M10 24H34L48 10L62 24L48 38L34 24M62 24H82"/>
+          <path class="ln on" d="M42.5 24.5L46.5 28.5L54 20.5"/>
+          <circle class="nd on" cx="10" cy="24" r="3.5"/><circle class="nd on" cx="86" cy="24" r="3.5"/>
+        </svg>
+        <h3 class="rule__name">Yayından önce ölçüm</h3>
+        <p class="rule__text">Her değişikliği sabit bir test setinde ölçeriz. Sonuç geriliyorsa yayına çıkmaz.</p>
       </li>
-      <li class="acro__row acro__row--res">
-        <svg class="acro__glyph" viewBox="0 0 110 73.2" aria-hidden="true"><use href="#brgrn-r" transform="translate(109.5 0) scale(-1 1)"/></svg>
-        <span class="acro__word" lang="en">Response</span>
-        <span class="acro__text"><b>Yanıt.</b> Harf ters, çünkü yanıt isteğin geldiği yöne geri döner.</span>
+      <li class="rule">
+        <svg class="rule__fig" viewBox="0 0 96 48" aria-hidden="true">
+          <path class="ln on" d="M20 6H76V42H20Z"/>
+          <path class="ln" d="M34 32L48 18L62 32Z"/>
+          <circle class="nd" cx="34" cy="32" r="2.5"/><circle class="nd" cx="48" cy="18" r="2.5"/><circle class="nd" cx="62" cy="32" r="2.5"/>
+        </svg>
+        <h3 class="rule__name">Veri içeride</h3>
+        <p class="rule__text">Veri hassassa modeller kurumun kendi sunucusunda çalışır. Dışarıya veri gitmez.</p>
       </li>
-      <li class="acro__row">
-        <svg class="acro__glyph" viewBox="0 0 110 73.2" aria-hidden="true"><use href="#brgrn-n"/></svg>
-        <span class="acro__word" lang="en">Networks</span>
-        <span class="acro__text"><b>Ağlar.</b> Tek model değil; birbirine bağlı modeller, veriler ve servisler.</span>
-      </li>
-    </ol>
+    </ul>
   </section>
 
-  <section class="band" id="projeler" aria-labelledby="projeler-baslik">
-    <h2 class="band__title" id="projeler-baslik">Projeler</h2>
-    <div class="slot">
-      <p class="slot__title">Yayında proje yok.</p>
-      <p class="slot__text">İlk uygulama hazır olduğunda burada listelenecek.</p>
+  <section class="band" id="birikim" aria-labelledby="birikim-baslik">
+    <h2 class="band__title" id="birikim-baslik">Teknik birikim</h2>
+    <p class="band__lead">Üzerinde çalıştığımız alanlar.</p>
+    <div class="band__box">
+      <ul class="fields">
+        <li class="field">
+          <h3 class="field__name">Ajan sistemleri</h3>
+          <p class="field__text">Rol dağılımlı çok ajanlı ekipler; planlayan, uygulayan ve denetleyen ajanlar; uzun işleri gözetimsiz yürüten iş akışları.</p>
+        </li>
+        <li class="field">
+          <h3 class="field__name">Kurumsal arama ve RAG</h3>
+          <p class="field__text">Belgeyi parçalama, gömme ve getirme; kaynağını gösteren yanıt; çeviri ve özetleme.</p>
+        </li>
+        <li class="field">
+          <h3 class="field__name">Konuşma tanıma ve dikte</h3>
+          <p class="field__text">Alan terimlerine duyarlı konuşma tanıma; deterministik terim sözlüğü; canlı metin düzeltme.</p>
+        </li>
+        <li class="field">
+          <h3 class="field__name">Sesli asistanlar</h3>
+          <p class="field__text">Konuşarak işlem yapan asistanlar: konuşma tanıma, diyalog yönetimi ve ses sentezi tek hatta.</p>
+        </li>
+        <li class="field">
+          <h3 class="field__name">Konuşma analizi</h3>
+          <p class="field__text">Ses kaydından döküm, konuşmacı tanıma; özet, karar ve aksiyon çıkarımı.</p>
+        </li>
+        <li class="field">
+          <h3 class="field__name">Belge anlama ve OCR</h3>
+          <p class="field__text">Taranmış belgeyi görsel dil modelleriyle okuma; alan çıkarımı; kurala göre otomatik kontrol.</p>
+        </li>
+        <li class="field">
+          <h3 class="field__name">Görüntü anlama</h3>
+          <p class="field__text">Sınıflandırma, segmentasyon ve derinlik verisiyle boyut kestirimi.</p>
+        </li>
+        <li class="field">
+          <h3 class="field__name">Görsel ve video üretimi</h3>
+          <p class="field__text">Kimliği koruyan görsel üretim, konuşan avatar, ses sentezi.</p>
+        </li>
+        <li class="field">
+          <h3 class="field__name">Karar destek ve eniyileme</h3>
+          <p class="field__text">Kural ve kısıt tabanlı eniyileme motorları; sonucu gerekçesiyle açıklayan dil modeli katmanı.</p>
+        </li>
+        <li class="field">
+          <h3 class="field__name">Model uyarlama</h3>
+          <p class="field__text">LoRA ile ince ayar; alan sözlükleri ve deterministik düzeltme katmanları.</p>
+        </li>
+        <li class="field">
+          <h3 class="field__name">Model sunumu ve altyapı</h3>
+          <p class="field__text">Açık modelleri kurum içi GPU&#x27;da çalıştırma: vLLM, eşzamanlılık ve bellek ayarı, anahtarlı API geçidi.</p>
+        </li>
+        <li class="field">
+          <h3 class="field__name">Mobil ve uç cihaz</h3>
+          <p class="field__text">Modeli telefonda ve uç cihazda çalıştıran uygulamalar.</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="band" id="akis" aria-labelledby="akis-baslik">
+    <h2 class="band__title" id="akis-baslik">Ne girer, ne çıkar?</h2>
+    <p class="band__lead">Ses, belge, görüntü, metin ya da veri girer; döküm, özet, yanıt, karar ya da görsel çıkar.</p>
+    <div class="band__box">
+      <figure class="flow" data-flow>
+        <svg viewBox="0 0 448 240" role="img" aria-label="Beş girdi türü ortadaki BRGRN amblemine akar ve beş çıktı türünden biri olarak çıkar."></svg>
+      </figure>
+    </div>
+  </section>
+
+  <section class="band" id="iletisim" aria-labelledby="iletisim-baslik">
+    <h2 class="band__title" id="iletisim-baslik">İletişim</h2>
+    <p class="band__lead">Projenizi anlatın; ne yapılabileceğini birlikte konuşalım.</p>
+    <div class="band__box contact">
+      <div class="contact__direct">
+        <a class="contact__mail" href="mailto:iletisim@brgrn.com.tr">iletisim@brgrn.com.tr</a>
+        <button type="button" class="btn" aria-live="polite" data-copy="iletisim@brgrn.com.tr" data-copied="Kopyalandı" data-failed="Kopyalanamadı">Adresi kopyala</button>
+      </div>
+      <form class="form" action="mailto:iletisim@brgrn.com.tr" method="post" enctype="text/plain" data-form data-to="iletisim@brgrn.com.tr" data-endpoint="https://api.web3forms.com/submit" data-key="">
+        <div class="form__pair">
+          <label class="form__field"><span>Ad soyad</span><input type="text" name="name" autocomplete="name" required maxlength="120"></label>
+          <label class="form__field"><span>E-posta</span><input type="email" name="email" autocomplete="email" required maxlength="160"></label>
+        </div>
+        <label class="form__field"><span>Konu</span><input type="text" name="subject" required maxlength="160"></label>
+        <label class="form__field"><span>Mesaj</span><textarea name="message" rows="5" required maxlength="5000"></textarea></label>
+        <input type="checkbox" name="botcheck" class="form__trap" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <div class="form__foot">
+          <button type="submit" class="btn btn--main">Mesajı gönder</button>
+          <p class="form__note">Bu bilgileri yalnızca size yanıt vermek için kullanırız.</p>
+        </div>
+        <p class="form__status" role="status" data-form-status></p>
+      </form>
     </div>
   </section>
 
@@ -133,6 +248,9 @@
   </div>
 </footer>
 
-<script src="assets/js/network.js" defer></script>
+<script type="application/json" id="i18n">{"net": {"down": "Yol kalmadı. Onarım bekleniyor.", "rerouted": "Bağlantı koptu. Yanıt başka yoldan dönüyor.", "unaffected": "Bağlantı koptu. Kullanılan yol etkilenmedi.", "healed_hand": "Bağlantı onarıldı.", "healed_self": "Bağlantı kendini onardı.", "healed_all": "Ağ onarıldı."}, "flow": {"in": ["Ses", "Belge", "Görüntü", "Metin", "Veri"], "out": ["Döküm", "Özet", "Yanıt", "Karar", "Görsel"]}, "form": {"sending": "Gönderiliyor…", "sent": "Mesajınız ulaştı. Yanıtı yazdığınız e-posta adresine göndereceğiz.", "failed": "Mesaj gönderilemedi. Yeniden deneyin ya da doğrudan iletisim@brgrn.com.tr adresine yazın.", "mailto": "Posta programınız açıldı. Gönderimi oradan tamamlayın."}}</script>
+<script src="assets/js/network.js?v=7" defer></script>
+<script src="assets/js/flow.js?v=7" defer></script>
+<script src="assets/js/contact.js?v=7" defer></script>
 </body>
 </html>

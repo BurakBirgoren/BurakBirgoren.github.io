@@ -8,6 +8,7 @@
   if (!fig) return;
   const svg = fig.querySelector('svg');
   const NS = 'http://www.w3.org/2000/svg';
+  const T = JSON.parse(document.getElementById('i18n').textContent).net;   // durum cümleleri, sayfanın dilinde
 
   // Izgara: 9 sütun × 6 satır. Tüm bağlantılar yatay, dikey ya da 45° — amblemin geometrisi gibi.
   const STEP = 64, PAD_X = 36, PAD_TOP = 30;
@@ -205,14 +206,14 @@
     const next = findRoute();
     if (!next) {
       hidePulses(); setRoute(null); phase = 'down';
-      say('Yol kalmadı. Onarım bekleniyor.');
+      say(T.down);
     } else if (onRoute) {
-      say('Bağlantı koptu. Yanıt başka yoldan dönüyor.');
+      say(T.rerouted);
       if (still) setRoute(next);
       else if (phase === 'rest') setRoute(next);
       else send(performance.now());
     } else {
-      say('Bağlantı koptu. Kullanılan yol etkilenmedi.');
+      say(T.unaffected);
     }
     refresh();
   }
@@ -222,7 +223,7 @@
     window.clearTimeout(edge.timer);
     edge.cut = false;
     edge.g.classList.remove('is-cut');
-    say(byHand ? 'Bağlantı onarıldı.' : 'Bağlantı kendini onardı.');
+    say(byHand ? T.healed_hand : T.healed_self);
     if (still || phase === 'rest') setRoute(findRoute());
     else if (phase === 'down') { send(performance.now()); wake(); }
     refresh();
@@ -235,7 +236,7 @@
   });
   out.healBtn.addEventListener('click', () => {
     edges.filter((e) => e.cut).forEach((e) => heal(e, true));
-    say('Ağ onarıldı.');
+    say(T.healed_all);
   });
 
   // ---------- başlat ----------
