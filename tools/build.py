@@ -78,7 +78,7 @@ def build(lang):
         values[f"p{n}_name"] = esc(item["name"])
         values[f"p{n}_text"] = esc(item["text"])
     values.update(
-        root=root, home=root or "./", url=esc(url), ver=VER, mail=esc(SITE["mail"]),
+        root=root, home=root or "./", url=esc(url), site_url=esc(SITE["url"]), ver=VER, mail=esc(SITE["mail"]),
         form_endpoint=esc(SITE["form_endpoint"]), form_key=esc(SITE["form_key"]),
         hreflang=hreflang, lang_switch=lang_switch, fields=fields, i18n_json=i18n_json,
     )
