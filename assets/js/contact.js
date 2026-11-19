@@ -56,9 +56,15 @@
     send.textContent = T.sending;
     say('', '');
     try {
-      data.append('access_key', form.dataset.key);
-      data.append('from_name', 'brgrn.com.tr');
-      const res = await fetch(form.dataset.endpoint, { method: 'POST', headers: { Accept: 'application/json' }, body: data });
+      // Hizmetin belgesindeki biçim: JSON gövde, JSON yanıt
+      const payload = Object.fromEntries(data);
+      payload.access_key = form.dataset.key;
+      payload.from_name = 'brgrn.com.tr';
+      const res = await fetch(form.dataset.endpoint, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify(payload),
+      });
       const out = await res.json().catch(() => ({}));
       if (!res.ok || out.success === false) throw new Error('gönderilemedi');
       form.reset();

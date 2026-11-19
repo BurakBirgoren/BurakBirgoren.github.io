@@ -43,10 +43,10 @@ Form, mesajı bir form hizmetine (Web3Forms) gönderecek şekilde yazıldı. Hiz
 ## Önizleme
 
 ```bash
-python3 -m http.server 7940 --bind 127.0.0.1
+python3 -m http.server 7961 --bind 127.0.0.1
 ```
 
-Tarayıcıda `http://localhost:7940` adresini aç. Diller: `/`, `/en/`, `/de/`, `/zh/`.
+Tarayıcıda `http://localhost:7961` adresini aç. Diller: `/`, `/en/`, `/de/`, `/zh/`.
 
 ## Proje eklemek
 
