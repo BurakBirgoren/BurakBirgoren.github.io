@@ -14,7 +14,9 @@ import pathlib
 import re
 import sys
 
-VER = "16"
+import ikonlar                                      # tools/ikonlar.py: alan çizimleri
+
+VER = "17"
 LANGS = ["tr", "en", "de", "zh"]          # ilk dil kök adreste yayınlanır
 HREFLANG = {"tr": "tr", "en": "en", "de": "de", "zh": "zh-Hans"}
 
@@ -30,6 +32,13 @@ def esc(text):
 
 def path_of(lang):
     return "" if lang == LANGS[0] else lang + "/"
+
+
+def check_icons():
+    """Her alanın bir çizimi olmalı."""
+    missing = [item["id"] for item in TEXTS[LANGS[0]]["fields"] if item["id"] not in ikonlar.ICONS]
+    if missing:
+        sys.exit(f"tools/ikonlar.py: şu alanların çizimi yok: {missing}")
 
 
 def check_same_shape():
@@ -64,6 +73,7 @@ def build(lang):
 
     fields = "\n".join(
         f'''        <li class="field" data-reveal style="--i:{n % 3}">
+          {ikonlar.svg(item["id"])}
           <h3 class="field__name">{esc(item["name"])}</h3>
           <p class="field__text">{esc(item["text"])}</p>
         </li>''' for n, item in enumerate(t["fields"])
@@ -101,5 +111,6 @@ def build(lang):
 
 if __name__ == "__main__":
     check_same_shape()
+    check_icons()
     for code in LANGS:
         print("yazıldı:", build(code).relative_to(ROOT))

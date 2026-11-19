@@ -15,6 +15,7 @@ python3 tools/build.py
 | `tools/page.html` | Sayfa şablonu; metinlerin yerinde `{{anahtar}}` durur |
 | `tools/metinler.json` | Bütün metinler, dört dilde; site ayarları en üstte `_site` içinde |
 | `tools/build.py` | Üretici betik |
+| `tools/ikonlar.py` | Teknik birikim alanlarının küçük çizimleri; anahtarlar `metinler.json` içindeki alan `id`'leri |
 
 Çıktılar `index.html` (Türkçe), `en/index.html`, `de/index.html` ve `zh/index.html` dosyalarıdır. Bunlar elle düzenlenmez; değişiklik şablonda ya da metin dosyasında yapılır, sonra betik yeniden çalıştırılır. Betik, bir dilde eksik anahtar varsa durur.
 

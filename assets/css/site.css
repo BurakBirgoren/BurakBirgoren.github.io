@@ -332,17 +332,37 @@ svg { display: block; }
 /* Teknik birikim: ince çizgili hücre ızgarası (çizgiler, boşlukta görünen zemin rengi) */
 .band__box { margin-top: clamp(28px, 4vw, 48px); padding-bottom: clamp(56px, 9vw, 104px); }
 .fields {
-  --cols: 3; --pad: clamp(18px, 2.4vw, 30px);
+  --cols: 3; --pad: clamp(20px, 2.4vw, 30px);
   display: grid; grid-template-columns: repeat(var(--cols), minmax(0, 1fr));
-  padding: 0; list-style: none; border-bottom: 1px solid var(--seam);
+  padding: 0; list-style: none; border-right: 1px solid var(--seam); border-bottom: 1px solid var(--seam);
 }
-.field { padding: var(--pad) var(--pad) calc(var(--pad) + 4px); border-top: 1px solid var(--seam); border-left: 1px solid var(--seam); transition: background-color .3s; }
-.field:hover { background-color: var(--hover); }
+.field { position: relative; isolation: isolate; padding: var(--pad) var(--pad) calc(var(--pad) + 6px); border-top: 1px solid var(--seam); border-left: 1px solid var(--seam); }
+/* imleci izleyen ışık: hücrenin içinde yumuşak bir parıltı, kenarında ince mavi bir çizgi (konumu reveal.js verir) */
+.field::before, .field::after { content: ""; position: absolute; pointer-events: none; opacity: 0; transition: opacity .45s; }
+.field::before { inset: 0; z-index: -1; background: radial-gradient(280px circle at var(--x, 50%) var(--y, 50%), color-mix(in srgb, var(--response) 14%, transparent), transparent 70%); }
+.field::after {
+  inset: -1px; padding: 1px;
+  background: radial-gradient(200px circle at calc(var(--x, 50%) + 1px) calc(var(--y, 50%) + 1px), var(--response-hi), transparent 72%);
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite: xor;
+  mask: linear-gradient(#000 0 0) content-box exclude, linear-gradient(#000 0 0);
+}
+.fields.is-lit .field::before, .fields.is-lit .field::after { opacity: 1; }
+
+/* alan çizimleri: sitenin çizgi dili (gri, beyaz = etkin, mavi = sonuç, kesik = devre dışı) */
+.field__fig { display: block; width: 84px; height: auto; aspect-ratio: 72 / 44; margin-bottom: 20px; overflow: visible; }
+.field__fig .ln { fill: none; stroke: var(--node); stroke-width: 1.2; stroke-linecap: round; stroke-linejoin: round; transition: stroke .35s; }
+.field__fig .ln.on { stroke: var(--chrome); }
+.field__fig .ln.res { stroke: var(--response-hi); stroke-width: 1.4; }
+.field__fig .ln.off { stroke-dasharray: 1.5 3.5; }
+.field__fig .nd { fill: var(--void); stroke: var(--node); stroke-width: 1.2; }
+.field__fig .nd.on { stroke: var(--chrome); }
+.field__fig .nd.res { stroke: var(--response-hi); stroke-width: 1.5; }
+.field__fig .pulse { fill: none; stroke: var(--response-hi); stroke-width: 2.4; stroke-linecap: round; stroke-dasharray: .12 2; stroke-dashoffset: .12; opacity: 0; filter: drop-shadow(0 0 3px var(--response)); }
+.field:hover .field__fig .ln:not(.on):not(.res) { stroke: var(--soft); }
 .field__name { font: 400 clamp(.84rem, .76rem + .3vw, .98rem)/1.35 var(--display); letter-spacing: .05em; }
 .field__text { margin-top: 10px; font-size: .95rem; line-height: 1.55; color: var(--soft); }
-@media (min-width: 901px) { .field:nth-child(3n + 1) { padding-left: 0; border-left: 0; } .field:nth-child(3n) { padding-right: 0; } }
-@media (max-width: 900px) and (min-width: 561px) { .fields { --cols: 2; } .field:nth-child(odd) { padding-left: 0; border-left: 0; } .field:nth-child(even) { padding-right: 0; } }
-@media (max-width: 560px) { .fields { --cols: 1; } .field { padding-inline: 0; border-left: 0; } }
+@media (max-width: 900px) and (min-width: 561px) { .fields { --cols: 2; } }
+@media (max-width: 560px) { .fields { --cols: 1; } }
 
 /* Akış: girdiler ambleme akar, yanıt olarak çıkar */
 .no-js .flow { display: none; }
@@ -465,6 +485,13 @@ html:lang(de) :is(.band__title, .rule__name, .field__name) { hyphens: auto; over
   .js .band__title[data-reveal] { opacity: 1; transform: none; }
   .js .band__title[data-reveal] > span { display: block; transform: translateY(.55em); clip-path: inset(0 0 100% 0); transition: transform 1s var(--ease), clip-path 1s var(--ease); }
   .js .band__title[data-reveal].is-in > span { transform: none; clip-path: inset(-20% -2% -20% -2%); }
+  .js .field[data-reveal] .field__fig .ln[pathLength] { stroke-dasharray: 1; stroke-dashoffset: 1; transition: stroke-dashoffset 1.3s var(--ease) calc(var(--i, 0) * 90ms + 250ms), stroke .35s; }
+  .js .field[data-reveal].is-in .field__fig .ln[pathLength] { stroke-dashoffset: 0; }
+  .js .field[data-reveal] .field__fig .ln.off, .js .field[data-reveal] .field__fig .nd { opacity: 0; transition: opacity .8s var(--ease) calc(var(--i, 0) * 90ms + 700ms); }
+  .js .field[data-reveal].is-in .field__fig .ln.off, .js .field[data-reveal].is-in .field__fig .nd { opacity: 1; }
+  .field.is-in .field__fig .pulse { animation: fig-pulse 1.5s var(--ease) calc(var(--i, 0) * 90ms + 1.4s) 1 both; }
+  .field:hover .field__fig .pulse { animation: fig-pulse 1.3s var(--ease) infinite; }
+  @keyframes fig-pulse { 0% { stroke-dashoffset: .12; opacity: 0; } 12%, 84% { opacity: 1; } 100% { stroke-dashoffset: -1; opacity: 0; } }
   .js .band[data-line]::before { transform: scaleX(0); }
   .js .band[data-line].is-in::before { transform: none; }
 }
