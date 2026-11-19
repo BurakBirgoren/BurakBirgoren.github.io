@@ -31,7 +31,7 @@
 <link rel="apple-touch-icon" href="../assets/img/apple-touch-icon.png">
 <link rel="preload" href="../assets/fonts/ibm-plex-sans-latin-400.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="../assets/fonts/michroma-latin-400.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="../assets/css/site.css?v=17">
+<link rel="stylesheet" href="../assets/css/site.css?v=17.1">
 <script>(function () { var d = document.documentElement; d.className = 'js'; try { if (localStorage.getItem('brgrn-tema') === 'light') d.setAttribute('data-theme', 'light'); } catch (e) {} })();</script>
 </head>
 <body>
@@ -53,8 +53,6 @@
     </g>
   </defs>
 </svg>
-
-<canvas class="scene" data-scene aria-hidden="true"></canvas>
 
 <a class="skip" href="#icerik">跳到正文</a>
 
@@ -97,6 +95,7 @@
     <!-- Metal amblem bu SVG'nin tam üstünde çizilir; sahne çalışmazsa SVG görünür kalır -->
     <div class="hero__stage rise" style="--d:1" aria-hidden="true">
       <svg class="hero__mark" viewBox="0 0 189.25 227.6" data-scene-anchor><use href="#brgrn-mark"/></svg>
+      <canvas class="scene" data-scene></canvas>
     </div>
   </section>
 
@@ -284,11 +283,11 @@
 </footer>
 
 <script type="application/json" id="i18n">{"net": {"down": "已无可用路径，等待修复。", "rerouted": "连接已切断，响应正在改走其他路径。", "unaffected": "连接已切断，当前路径未受影响。", "healed_hand": "连接已修复。", "healed_self": "连接已自动修复。", "healed_all": "网络已修复。"}, "flow": {"in": ["语音", "文档", "图像", "文本", "数据"], "out": ["转写", "摘要", "回答", "决策", "图像"]}, "form": {"sending": "正在发送…", "sent": "留言已送达。我们会回复到您填写的邮箱。", "failed": "留言发送失败。请重试，或直接写信至 iletisim@brgrn.com.tr。", "mailto": "已打开您的邮件程序，请在其中完成发送。"}}</script>
-<script src="../assets/js/theme.js?v=17" defer></script>
-<script src="../assets/js/scene.js?v=17" defer></script>
-<script src="../assets/js/reveal.js?v=17" defer></script>
-<script src="../assets/js/network.js?v=17" defer></script>
-<script src="../assets/js/flow.js?v=17" defer></script>
-<script src="../assets/js/contact.js?v=17" defer></script>
+<script src="../assets/js/theme.js?v=17.1" defer></script>
+<script src="../assets/js/scene.js?v=17.1" defer></script>
+<script src="../assets/js/reveal.js?v=17.1" defer></script>
+<script src="../assets/js/network.js?v=17.1" defer></script>
+<script src="../assets/js/flow.js?v=17.1" defer></script>
+<script src="../assets/js/contact.js?v=17.1" defer></script>
 </body>
 </html>

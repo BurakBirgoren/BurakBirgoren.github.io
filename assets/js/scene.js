@@ -2,6 +2,8 @@
    Amblemin dört yüzü kalınlığı olan metal levhalardır. Açılışta iki ana levha yerine döner,
    iki küçük levha kıvrım çizgilerinden katlanarak oturur ve hafif açılı kalır: ışık her yüzde farklı kırılır.
    Işık fareyi izler, amblem hafifçe döner. Sayfa kaydırıldıkça amblem yan döner ve sahneden çıkar.
+   Tuval logonun alanının içindedir ve sayfayla birlikte kayar: telefonda kaydırma ayrı bir iş parçacığında
+   aktığı için, ekrana sabit bir tuvalde logonun yerini her karede hesaplamak titreme ve sıçrama yapıyordu.
    Hareket azaltma ayarı açıksa ya da WebGL yoksa hiç başlamaz; yerinde SVG amblem kalır. */
 (() => {
   'use strict';
@@ -77,7 +79,11 @@
       gl_Position = vec4(ndc, -P.z * 0.2, 1.0);
     }`;
   const FRAG = `
+    #ifdef GL_FRAGMENT_PRECISION_HIGH
     precision highp float;
+    #else
+    precision mediump float;
+    #endif
     varying vec3 vN; varying vec3 vP;
     uniform vec3 uLight, uBase, uRim; uniform float uFade, uGloss;
     void main() {
@@ -122,32 +128,38 @@
   const outBack = (t) => { const c = 1.35; return 1 + (c + 1) * Math.pow(t - 1, 3) + c * Math.pow(t - 1, 2); };
   const span = (t, a, b) => Math.min(Math.max((t - a) / (b - a), 0), 1);
 
-  // ---------- boyut ----------
+  // ---------- boyut: yalnız tuvalin kendi boyu değişince (adres çubuğu açılıp kapanınca değil) ----------
   const CAM = 4.0, FOC = 2.6;
-  let vw = 1, vh = 1;
-  function resize() {
+  let center = [0, 0], scale = 1, range = 400;
+  function measure() {
+    const c = canvas.getBoundingClientRect(), a = anchor.getBoundingClientRect();
+    if (!c.width || !c.height) return;
     const dpr = Math.min(window.devicePixelRatio || 1, 2);
-    vw = window.innerWidth; vh = window.innerHeight;
-    canvas.width = Math.round(vw * dpr); canvas.height = Math.round(vh * dpr);
-    gl.viewport(0, 0, canvas.width, canvas.height);
-    gl.uniform1f(U.uAspect, vw / vh);
+    const w = Math.round(c.width * dpr), h = Math.round(c.height * dpr);
+    if (canvas.width !== w || canvas.height !== h) { canvas.width = w; canvas.height = h; gl.viewport(0, 0, w, h); }
+    gl.uniform1f(U.uAspect, c.width / c.height);
+    // amblem, tuvalin içinde sayfadaki SVG'nin tam üstünde ve onunla aynı boyda durur (ikisi aynı alanda, birlikte kayar)
+    center = [((a.left + a.width / 2 - c.left) / c.width) * 2 - 1, 1 - ((a.top + a.height / 2 - c.top) / c.height) * 2];
+    scale = (a.height / c.height) * (CAM / FOC);
+    range = Math.max(c.height * 1.1, 320);
   }
-  resize();
-  window.addEventListener('resize', resize);
+  measure();
+  if ('ResizeObserver' in window) new ResizeObserver(measure).observe(canvas);
+  else window.addEventListener('resize', measure);
 
   // ---------- hareket ----------
   let px = 0, py = 0, tx = 0, ty = 0;
-  window.addEventListener('pointermove', (e) => { tx = (e.clientX / vw) * 2 - 1; ty = (e.clientY / vh) * 2 - 1; }, { passive: true });
+  window.addEventListener('pointermove', (e) => { tx = (e.clientX / window.innerWidth) * 2 - 1; ty = (e.clientY / window.innerHeight) * 2 - 1; }, { passive: true });
 
-  let t0 = 0, last = 0, raf = 0, out = 0, shown = false;
+  let t0 = 0, last = 0, raf = 0, out = 0, shown = false, onScreen = true;
   function frame(now) {
     raf = 0;
-    if (document.hidden) return;
+    if (document.hidden || !onScreen) return;
     if (!t0) t0 = now;
     const dt = Math.min((now - last) / 1000, 0.05) || 0.016; last = now;
     const time = (now - t0) / 1000;
     px += (tx - px) * (1 - Math.exp(-dt * 3.5)); py += (ty - py) * (1 - Math.exp(-dt * 3.5));
-    const goal = Math.min(Math.max(window.scrollY / (vh * 0.7), 0), 1);   // 0: sayfa başı, 1: giriş geçildi
+    const goal = Math.min(Math.max(window.scrollY / range, 0), 1);       // 0: sayfa başı, 1: giriş geçildi
     out += (goal - out) * (1 - Math.exp(-dt * 6));
 
     const light = root.getAttribute('data-theme') === 'light';
@@ -157,10 +169,8 @@
     gl.uniform3f(U.uLight, px * 3.2 + 1.1, -py * 2.4 + 1.5, 3.2);                 // ışık fareyi izler
     gl.uniform1f(U.uFade, 1 - span(out, 0.5, 1));
 
-    // amblem, sayfadaki SVG'nin tam üstünde ve onunla aynı boyda durur
-    const r = anchor.getBoundingClientRect();
-    gl.uniform2f(U.uCenter, ((r.left + r.width / 2) / vw) * 2 - 1, 1 - ((r.top + r.height / 2) / vh) * 2);
-    gl.uniform1f(U.uScale, (r.height / vh) * (CAM / FOC) * (1 - 0.1 * out));
+    gl.uniform2f(U.uCenter, center[0], center[1]);
+    gl.uniform1f(U.uScale, scale * (1 - 0.1 * out));
 
     // tam tur atmaz (amblem ters görünmesin); kaydırınca yan döner
     const turn = mul(rotY(0.3 * Math.sin(time * 0.42) + px * 0.36 + out * 1.3), rotX(py * 0.18 - 0.04));
@@ -185,6 +195,8 @@
   }
   const start = () => { if (!raf && !document.hidden) { last = performance.now(); raf = requestAnimationFrame(frame); } };
   document.addEventListener('visibilitychange', start);
+  // ekran dışındayken çizmez (telefonda pil için)
+  if ('IntersectionObserver' in window) new IntersectionObserver(([e]) => { onScreen = e.isIntersecting; start(); }).observe(canvas);
   canvas.addEventListener('webglcontextlost', (e) => { e.preventDefault(); root.classList.remove('gl-on'); cancelAnimationFrame(raf); raf = 0; });
   start();
 })();

@@ -31,7 +31,7 @@
 <link rel="apple-touch-icon" href="../assets/img/apple-touch-icon.png">
 <link rel="preload" href="../assets/fonts/ibm-plex-sans-latin-400.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="../assets/fonts/michroma-latin-400.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="../assets/css/site.css?v=17">
+<link rel="stylesheet" href="../assets/css/site.css?v=17.1">
 <script>(function () { var d = document.documentElement; d.className = 'js'; try { if (localStorage.getItem('brgrn-tema') === 'light') d.setAttribute('data-theme', 'light'); } catch (e) {} })();</script>
 </head>
 <body>
@@ -53,8 +53,6 @@
     </g>
   </defs>
 </svg>
-
-<canvas class="scene" data-scene aria-hidden="true"></canvas>
 
 <a class="skip" href="#icerik">Zum Inhalt springen</a>
 
@@ -97,6 +95,7 @@
     <!-- Metal amblem bu SVG'nin tam üstünde çizilir; sahne çalışmazsa SVG görünür kalır -->
     <div class="hero__stage rise" style="--d:1" aria-hidden="true">
       <svg class="hero__mark" viewBox="0 0 189.25 227.6" data-scene-anchor><use href="#brgrn-mark"/></svg>
+      <canvas class="scene" data-scene></canvas>
     </div>
   </section>
 
@@ -284,11 +283,11 @@
 </footer>
 
 <script type="application/json" id="i18n">{"net": {"down": "Kein Weg mehr frei. Warten auf Reparatur.", "rerouted": "Verbindung getrennt. Die Antwort nimmt einen anderen Weg.", "unaffected": "Verbindung getrennt. Der genutzte Weg ist nicht betroffen.", "healed_hand": "Verbindung repariert.", "healed_self": "Die Verbindung hat sich selbst repariert.", "healed_all": "Netz repariert."}, "flow": {"in": ["Audio", "Dokument", "Bild", "Text", "Daten"], "out": ["Transkript", "Zusammenfassung", "Antwort", "Entscheidung", "Bild"]}, "form": {"sending": "Wird gesendet…", "sent": "Ihre Nachricht ist angekommen. Wir antworten an die angegebene E-Mail-Adresse.", "failed": "Die Nachricht konnte nicht gesendet werden. Versuchen Sie es erneut oder schreiben Sie direkt an iletisim@brgrn.com.tr.", "mailto": "Ihr E-Mail-Programm wurde geöffnet. Schließen Sie den Versand dort ab."}}</script>
-<script src="../assets/js/theme.js?v=17" defer></script>
-<script src="../assets/js/scene.js?v=17" defer></script>
-<script src="../assets/js/reveal.js?v=17" defer></script>
-<script src="../assets/js/network.js?v=17" defer></script>
-<script src="../assets/js/flow.js?v=17" defer></script>
-<script src="../assets/js/contact.js?v=17" defer></script>
+<script src="../assets/js/theme.js?v=17.1" defer></script>
+<script src="../assets/js/scene.js?v=17.1" defer></script>
+<script src="../assets/js/reveal.js?v=17.1" defer></script>
+<script src="../assets/js/network.js?v=17.1" defer></script>
+<script src="../assets/js/flow.js?v=17.1" defer></script>
+<script src="../assets/js/contact.js?v=17.1" defer></script>
 </body>
 </html>

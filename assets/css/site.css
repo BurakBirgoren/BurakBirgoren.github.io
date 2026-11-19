@@ -210,10 +210,12 @@ svg { display: block; }
   @keyframes more-fall { 0% { transform: none; opacity: 0; } 18%, 72% { opacity: 1; } 100% { transform: translateY(30px); opacity: 0; } }
 }
 /* Amblem sahnesi: metal amblem bu SVG'nin tam üstünde çizilir; sahne çalışmıyorsa SVG görünür kalır */
-.hero__stage { display: grid; place-items: center; min-height: clamp(240px, 56vh, 600px); }
-.hero__mark { height: clamp(210px, 48vh, 470px); width: auto; transition: opacity .8s; }
+.hero__stage { position: relative; display: grid; place-items: center; min-height: clamp(240px, 56vh, 600px); }
+.hero__mark { height: clamp(210px, 48vh, 470px); height: clamp(210px, 48lvh, 470px); width: auto; transition: opacity .8s; }
 .gl-on .hero__mark { opacity: 0; }
-.scene { position: fixed; inset: 0; width: 100%; height: 100%; z-index: -1; pointer-events: none; }
+/* Tuval logonun kendi alanında durur ve sayfayla birlikte kayar. Katlanan parçalar dışarı taşabilsin diye
+   alanın yalnız üstüne ve altına uzar (yana uzarsa telefonda yatay kaydırma çıkar). */
+.scene { position: absolute; left: 0; right: 0; top: -18%; bottom: -18%; display: block; width: 100%; height: 136%; pointer-events: none; }
 
 
 .tagline {
@@ -456,7 +458,7 @@ html:lang(de) :is(.band__title, .rule__name, .field__name) { hyphens: auto; over
 @media (max-width: 880px) {
   .hero { grid-template-columns: minmax(0, 1fr); min-height: 0; gap: 18px; }
   .hero__stage { order: -1; min-height: 0; padding-top: 8px; }
-  .hero__mark { height: clamp(170px, 30vh, 260px); }
+  .hero__mark { height: clamp(170px, 30vh, 260px); height: clamp(170px, 30lvh, 260px); }
   .lede { max-width: 28ch; }
   .proof { grid-template-columns: minmax(0, 1fr); }
   .proof .net { position: static; }

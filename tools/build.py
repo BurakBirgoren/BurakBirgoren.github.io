@@ -16,7 +16,7 @@ import sys
 
 import ikonlar                                      # tools/ikonlar.py: alan çizimleri
 
-VER = "17"
+VER = "17.1"
 LANGS = ["tr", "en", "de", "zh"]          # ilk dil kök adreste yayınlanır
 HREFLANG = {"tr": "tr", "en": "en", "de": "de", "zh": "zh-Hans"}
 
